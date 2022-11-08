@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lentelės</title>
+    <style>
+        table {
+            /* Visos keturios kraštinės
+            border: 1px solid black; */
+            /* Kraštinės individualiai */
+            /* border-left: 1px solid yellow;
+            border-bottom: 1px solid blue;
+            border-right: 1px solid red;
+            border-top: 1px solid purple; */
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-collapse: collapse;
+            width: 1200px;
+        }
+
+        td {
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            background-color: rgb(243, 243, 243);
+            color: rgb(69, 11, 11);
+            padding: 15px;
+            /* Kraštinių atitraukimo priskyrimas individualiai */
+            /* padding-left: 5px;
+            padding-right: 10px;
+            padding-top: 8px;
+            padding-bottom: 16px; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lentelės</h1>
+    <!-- table elementas apglėbia visą lentelės turinį -->
+    <table>
+        <!-- tr - table row, žymi lentelės eilutę -->
+        <tr>
+            <!-- td - table data žymi lentelės stulpelį -->
+            <td style="color: rgb(251, 0, 0); width: 400px;">Lorem ipsum dolor sit amet.</td>
+            <td>Lorem, ipsum dolor.</td>
+            <td>Lorem ipsum dolor sit amet consectetur.</td>
+            <td>Lorem, ipsum.</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>Lorem, ipsum dolor.</td>
+            <td>Lorem ipsum dolor sit amet consectetur.</td>
+            <td>Lorem, ipsum.</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>Lorem, ipsum dolor.</td>
+            <td>Lorem ipsum dolor sit amet consectetur.</td>
+            <td>Lorem, ipsum.</td>
+        </tr>
+    </table>
+</body>
+</html>
