@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin - Padding</title>
+    <style>
+        /* Reset stilius */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 600px;
+            color: white;
+            font-size: 30px;
+        }
+        .box1 {
+            background-color: red;
+            /* padding-top: 100px;
+            padding-left: 50px; */
+            padding: 100px 0 0 50px;
+            /* Pirma reikšmė viršus
+            Antra reikšmė dešinė
+            Trečia reikšmė apačia
+            Ketvirta reikšmė kairė */
+            /* Jeigu norime atitraukti po vienodą pikselių kiekį iš viršaus ir apačios: */
+            /* padding: 100px 50px; */
+            /* Jeigu norime atitraukti 100px iš viršaus, 50px iš kairės ir dešinės, 150px iš apačios */
+            /* padding: 100px 50px 150px; */
+        }
+        .box2 {
+            background-color: blue;
+        }
+        .box3 {
+            background-color: purple;
+            /* Padding savybės taisyklės reikšmių atžvilgiu galioja tos pačios ir margin savybei */
+            margin: 50px 0 0 50px;
+            padding: 50px;
+        }
+        .box4 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        Turinys
+    </div>
+    <div class="box box2"></div>
+    <div class="box box3">Dar vienas turinys</div>
+    <div class="box box4"></div>
+</body>
+</html>
