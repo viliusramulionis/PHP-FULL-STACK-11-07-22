@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formos</title>
+</head>
+<body>
+    <form action="https://google.com">
+        <!-- <input> Savaime užsidarantis elementas -->
+        <div>
+            <label>Jūsų vardas:</label>
+            <input type="text" placeholder="Vardenis Pavardenis" required>
+        </div>
+        <div>
+            <label>Jūsų el. pašto adresas:</label>
+            <input type="email" placeholder="info@bit.lt" required>
+        </div>
+        <div>
+            <label>Jūsų telefonas:</label>
+            <input type="tel" placeholder="+370755615656" required>
+            <!-- Reikalingas pattern atributas -->
+        </div>
+        <div>
+            <label>Slaptažodis:</label>
+            <input type="password" required>
+        </div>
+        <div>
+            <label>Gimimo data:</label>
+            <input type="date" required>
+        </div>
+        <div>
+            <label>Mėgstamiausia spalva:</label>
+            <input type="color" required>
+        </div>
+        <div>
+            <label for="photo">Jūsų nuotrauka:</label>
+            <input id="photo" type="file" required> 
+        </div>
+        <div>
+            <label>Jūsų amžius:</label>
+            <input type="number" min="13" max="150" value="99" required> 
+        </div>
+        <div>
+            <!-- <label>
+                <input type="checkbox"> Sutinku su taisyklėmis
+            </label> -->
+            <label for="terms_and_conditions">Sutinku su taisyklėmis</label>
+            <input id="terms_and_conditions" type="checkbox">
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="produktas">
+                Grybai
+            </label>
+            <label>
+                <input type="radio" name="produktas">
+                Uogos
+            </label>
+            <label>
+                <input type="radio" name="produktas">
+                Vaisiai
+            </label>
+        </div>
+        <div>
+            <select>
+                <option value="1">Grybai</option>
+                <option value="2">Uogos</option>
+                <option value="3">Vaisiai</option>
+            </select>
+        </div>
+        <div>
+            <select multiple>
+                <option value="1">Grybai</option>
+                <option value="2">Uogos</option>
+                <option value="3">Vaisiai</option>
+            </select>
+        </div>
+        <div>
+            <label>Jūsų komentaras:</label><br />
+            <textarea>Kažkoks tekstas</textarea>
+        </div>
+        <!-- Senesnis mygtukų atvaizdavimo variantas pasinaudojant input elementais -->
+        <!-- <input type="reset" value="Išvalyti">
+
+        <input type="submit" value="Siųsti"> -->
+
+        <button type="reset">Išvalyti</button>
+
+        <button type="submit">Siųsti</button>
+    </form>
+</body>
+</html>

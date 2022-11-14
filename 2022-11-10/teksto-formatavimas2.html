@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teksto formatavimas antra dalis</title>
+    <style>
+        .strong {
+            font-weight: bold;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .small {
+            font-size: smaller;
+        }
+        .sup {
+            font-size: smaller;
+            vertical-align: super;
+        }
+        .sub {
+            font-size: smaller;
+            vertical-align: sub;
+        }
+        .del {
+            text-decoration: line-through;
+        }
+        .ins {
+            text-decoration: underline;
+        }
+        .mark {
+            background-color: purple;
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- em - Emphesized text (toks pats kaip <i>) -->
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, officiis?</h1>
+    <p><strong>Lorem ipsum</strong> dolor sit amet, <b>consectetur adipisicing elit.</b> Ipsum praesentium eum obcaecati quia iusto delectus esse dolorem id molestiae beatae!</p>
+    <p>Lorem ipsum dolor <em>sit amet consectetur</em> adipisicing elit. <i>Non, architecto.</i> Soluta distinctio impedit ut ad commodi itaque veniam et, magnam animi voluptatum eos, modi repudiandae, nemo dolorum hic nam quam! Aut facere voluptatibus excepturi perspiciatis sed veritatis. Sunt, placeat, itaque nostrum tempora dolore nesciunt quas iste minima aliquam fuga iure.</p>
+    <!-- small - sumažina šrifto dydį -->
+    <p>Lorem ipsum <small>dolor sit amet,</small> consectetur adipisicing elit. Quo, sed!</p>
+    <!-- sub - Subscript
+    sup - Superscript -->
+    <p>
+        <strong>2<sup>2</sup></strong>
+    </p>
+    <p>
+        <strong>4<sub>4</sub></strong>
+    </p>
+    <p>
+        <!-- del - deleted, nubraukia tekstą -->
+        Lorem ipsum dolor, <del>sit amet consectetur</del> adipisicing elit. Nam, cupiditate pariatur quo aliquid aperiam expedita omnis repellendus! Suscipit, animi inventore?
+    </p>
+    <p>
+        <!-- mark - pažymi tekstą spalva -->
+        Lorem ipsum dolor <mark>sit amet consectetur adipisicing</mark> elit. Sit atque molestiae, nam illum a ab facilis et eligendi omnis necessitatibus.
+    </p>
+    <p>
+        <!-- ins - inserted, pabriaukia tekstą -->
+        <ins>Lorem ipsum dolor sit</ins>, amet consectetur adipisicing elit. Quam, quo.
+    </p>
+    
+    <h2>Formatuotas tekstas CSS pagalba:</h2>
+    
+    <p><span class="strong">Lorem ipsum dolor sit</span>, amet consectetur adipisicing elit. <span class="italic">Aut numquam nisi ad repudiandae</span>, dicta quisquam eveniet labore fugit magnam totam unde a nam et alias dolorem vel consequatur dignissimos explicabo quis corporis quae nemo, ratione est voluptas. Corporis, odit ad est laborum dolorem voluptate consequatur, explicabo tempore vel qui et!</p>
+    <p>Lorem ipsum dolor sit amet consectetur, <span class="small">adipisicing elit</span>. Obcaecati molestiae corporis alias, officia quibusdam debitis fuga similique iure veniam voluptatum!</p>
+    <p>Lorem ipsum <span class="sup">dolor</span>, sit amet <span class="sub">consectetur</span> adipisicing elit. Nemo, minima.</p>
+    <p>Lorem ipsum <span class="mark">dolor sit amet consectetur adipisicing elit</span>. <span class="del">Et laboriosam impedit praesentium</span> soluta. Blanditiis magni magnam <span class="ins">dolorum expedita distinctio atque vel</span>, odio est vitae doloremque consectetur illo quasi velit quidem.</p>
+</body>
+</html>
