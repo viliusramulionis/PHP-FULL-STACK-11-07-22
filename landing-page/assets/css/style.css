@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background-color: purple;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo img {
+    width: 160px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav ul a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+    font-size: 13px;
+}

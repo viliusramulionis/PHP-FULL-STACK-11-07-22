@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trijų stulpelių galerija</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            /* Pločio skaičiavimas su calc funkcija, kuomet norime paskaičiuoti procentinę išraišką ir pikselius */
+            width: calc(33.3333333333% - 30px);
+            width: 33.333333333%;
+            padding: 0 15px;
+            float: left;
+        }
+
+        .column img {
+            width: 100%;
+        }
+        
+        /* Kreipimąsis į elementą kuris yra pačiame .column klasės elemente, o ne vidinėse žymose */
+        .column > img {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="column">
+        <img src="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg" />
+        <a href="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg">
+            <img src="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg" alt="Keista katė" />
+        </a>
+    </div>
+    <div class="column">
+        <a href="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg">
+            <img src="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg" alt="Keista katė" />
+        </a>
+    </div>
+    <div class="column">
+        <a href="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg">
+            <img src="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg" alt="Keista katė" />
+        </a>
+    </div>
+</body>
+</html>

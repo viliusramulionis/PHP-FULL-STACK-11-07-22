@@ -1,0 +1,41 @@
+body {
+    /* Important žyma perrašo bet kurioje pozicijoje aprašytą savybę */
+    background-color: black !important;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    background-color: white;
+    /* 100% matomumo lauko aukščio (viewport height) */
+    height: 100vh; 
+    /* 100% matomumo lauko pločio (viewport width) */
+    width: 100vw; 
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul a {
+    display: flex;
+    padding: 15px 0;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul a i {
+    margin-right: 10px;
+}
+
+nav ul li:nth-child(2) i {
+    margin-right: 3px;
+}
+
+nav ul a:hover {
+    color: red;
+}
