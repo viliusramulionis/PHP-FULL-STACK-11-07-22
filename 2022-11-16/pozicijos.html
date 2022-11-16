@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozicijos</title>
+    <style>
+        /* 
+            position: static; Standartinė (pagal nutylėjimą) priskiriama pozicija
+            position: relative; Nurodo, kad pagal šį elementą lygiuojami visi absoliutus elementai jo viduje
+            position: absolute; Elementas lygiuojamas palei artimiausią relityvų elementą
+        */
+        .relative {
+            background-color: black;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            position: relative;
+            top: 50px;
+            left: 0;
+        }
+
+        .absolute {
+            width: 100px;
+            height: 100px;
+            background: rgb(185, 111, 0);
+            /* margin: 100px 0 0 250px; */
+            position: absolute;
+            /* 
+                Pagal nutylėjimą pritaikomos savybės
+                top: 0; 
+                left: 0;
+            */
+            /* 
+                right: 0;
+                bottom: 0; 
+            */
+            left: 0;
+            top: 0;
+        }
+
+        .bottom-right {
+            /* Left pozicija visuomet dominuoja prieš right poziciją */
+            right: 0;
+            /* Top pozicija visuomet dominuoja prieš bottom poziciją */
+            bottom: 0;
+            left: unset;
+            top: unset;
+        }
+
+        .custom-position {
+            top: 50px;
+            left: 500px;
+        }
+
+        .block {
+            margin: 8000px auto 0;
+            background-color: black;
+            width: 700px;
+            height: 300px;
+        }
+
+        .absolute-block {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+            top: 8600px;
+            left: 900px;
+        }
+
+        h1 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Statinis turinys</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt quibusdam dolores aliquam eum, cum dolorum quasi reiciendis nemo! Magnam minima, vero ea odio dicta, autem laboriosam nihil pariatur accusantium porro obcaecati quas voluptatibus totam! Quisquam, sapiente amet distinctio alias facere provident repudiandae doloremque molestias, excepturi numquam praesentium quam voluptate nisi tenetur, omnis magni error totam? Tenetur, vel. Dolorem ducimus quaerat at, ipsa aut vitae error dignissimos atque quo nobis libero soluta ut. Temporibus sequi, ipsam unde corporis fugit asperiores voluptatum, in voluptate ut maiores, quidem quod natus delectus amet. Aliquid vero, reiciendis perspiciatis voluptate eius mollitia quibusdam dolores magnam ipsa sint doloribus nihil cupiditate nam! Suscipit voluptatum deleniti at necessitatibus iure porro adipisci totam cumque. Beatae, enim culpa explicabo vero corporis tenetur voluptatum officia architecto. Magnam, harum odio totam ut quibusdam quisquam quidem aperiam neque ipsam qui maiores veniam deleniti voluptatem minus. Eveniet quisquam culpa quod beatae, suscipit numquam quis voluptatibus nostrum praesentium, enim voluptatem et corporis necessitatibus sequi aut. Fugit, nemo optio, maxime laborum expedita necessitatibus repellat aspernatur sed commodi reprehenderit fugiat nam voluptatibus eveniet nesciunt. Repellat accusamus illo illum itaque consequuntur iure accusantium enim quasi unde, doloribus, aliquid voluptates ab magnam tenetur dolorum. Unde id odio obcaecati, laboriosam officiis ullam maiores consequuntur omnis, impedit architecto dolorem aliquid dolores recusandae. Expedita sed quaerat numquam facere beatae omnis et sequi molestiae minus rem. Rerum, repellendus quos! Quia iste asperiores sint nemo laboriosam explicabo necessitatibus sequi tenetur natus repudiandae, maiores dolor corporis ut voluptates, cum facere ratione nostrum. Quidem nostrum, dolores voluptates unde reiciendis incidunt tenetur error iure molestias velit veritatis ducimus veniam, nam nesciunt! Voluptate dolore veniam praesentium voluptatum quod fugit mollitia nulla, impedit beatae dolor, error voluptatibus sit non delectus iure sint placeat? Aliquid molestias blanditiis est ex dolorem, esse doloribus excepturi inventore labore, sed tempora id non rem.</p>
+    <div class="relative">
+        <h1>Statinis turinys releatyviame elemente</h1>
+        <div class="absolute bottom-right"></div>
+        <div class="absolute custom-position"></div>
+    </div>
+
+    <div class="block">
+        <div class="absolute-block"></div>
+    </div>
+</body>
+</html>
