@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Park žemėlapis</title>
+    <style>
+        .map {
+            background: url(mapsas.jpg) no-repeat top left;
+            width: 1084px;
+            height: 1191px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .map-link {
+            position: absolute;
+            opacity: 0;
+            text-decoration: none;
+        }
+        .map-link:hover {
+            opacity: 1;
+        }
+        .map-link span {
+            color: rgb(9, 10, 5);
+            background-color: white;
+            border: 2px solid rgb(171, 164, 157);
+            padding: 8px 10px;
+            position: absolute;
+            /* text-transform savybe galima paversti tekstą didžiosiomis (uppercase), mažosiomis (lowercase), pirmomis didžiosiomis žodžio (capitalize) raidėmis  */
+            text-transform: uppercase; 
+            top: -20px;
+        }
+        .link1 {
+            width: 120px;
+            height: 70px;
+            top: 67px;
+            left: 143px;
+        }
+        .link1 span {
+            width: 124px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <a href="#" class="map-link link1">
+            <span>Vila "Ramovė"</span>
+        </a>
+    </div>
+</body>
+</html>
