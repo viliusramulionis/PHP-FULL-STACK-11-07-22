@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Struktūtra</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        header {
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            padding: 5px 10px;
+        }
+        main {
+            display: flex;
+        }
+        article {
+            width: 70%;
+        }
+        aside {
+            width: 30%;
+        }
+        footer {
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        label.hamburger-nav {
+            display: none;
+        }
+
+        input.hidden {
+            display: none;
+        }
+
+        /* Responive query */
+        /* kas turėtų nutikti kai ekrano plotis bus mažesnis arba lygu 768px */
+        @media screen and (max-width: 768px) {
+            article,
+            aside {
+                width: 100%;
+            }
+            main {
+                display: block;
+            }
+
+            label.hamburger-nav {
+                padding-top: 5px;
+                display: inline-block;
+            }
+
+            label.hamburger-nav span {
+                width: 20px;
+                height: 3px;
+                background: black;
+                display: block;
+                margin-bottom: 4px;
+            }   
+            nav ul { 
+                display: none;
+            }
+            /* + Ženklas nurodo sekantį elementą */
+            #hamburger:checked + ul {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            header h1 {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header h1 {
+                font-size: 60px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tai yra headeris</h1>
+        <nav>
+            <label for="hamburger" class="hamburger-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <input type="checkbox" id="hamburger" class="hidden">
+            <ul>
+                <li><a href="#">Pirmas</a></li>
+                <li><a href="#">Antras</a></li>
+                <li><a href="#">Trečias</a></li>
+                <li><a href="#">Ketvirtas</a></li>
+                <li><a href="#">Penktas</a></li>
+                <li><a href="#">Šeštas</a></li>
+                <li><a href="#">Septintas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <article>
+            <h1>Straipsnio pavadinimas</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eos aspernatur omnis aliquid? Architecto libero quisquam accusamus fugit doloremque molestias ducimus nam? Praesentium, ea laboriosam. Repudiandae placeat eligendi sunt quia harum et perferendis minima dicta, eius possimus consectetur neque sequi tempora ad assumenda quisquam voluptatum optio voluptatibus fuga necessitatibus quasi ut vero. Reprehenderit hic quibusdam ut ipsa tenetur dicta tempore delectus vitae, recusandae ratione unde veniam at beatae adipisci. Saepe culpa tempore ullam alias blanditiis aut suscipit exercitationem magni placeat natus. Reprehenderit maiores, ullam nemo similique aspernatur dolorum alias molestiae a. Aliquam, dignissimos modi, tempore temporibus reiciendis quos quasi atque distinctio veniam, cumque debitis unde totam. Ipsa sequi, numquam aliquam enim nulla beatae nemo fugit quia quos. Quasi suscipit assumenda voluptas, culpa blanditiis quae aliquid dolor sunt eveniet repellendus corrupti illo qui ratione voluptates ipsam aut laudantium tempore, a ipsum. Totam debitis tenetur iusto in incidunt id, vitae qui labore fugiat adipisci, nulla exercitationem dolore aperiam earum temporibus enim consequatur? Rem distinctio temporibus debitis praesentium, veritatis quod iure, vel ullam non magnam consectetur sapiente sequi. Maiores, in velit aliquid voluptatum, voluptatem voluptate officiis culpa illo vero, amet commodi? Rem sequi, quidem expedita ducimus quae maxime temporibus molestiae voluptate dolor cumque dolore ratione quod ipsam, fuga sunt in quo optio aperiam atque enim minima iure mollitia libero! Totam blanditiis ipsa ratione vitae facere enim quaerat nisi dicta beatae temporibus qui quidem optio ut reiciendis harum, deleniti impedit tempore est eum aliquid minus deserunt consequatur excepturi natus. Obcaecati veritatis, debitis laboriosam illo expedita consequatur beatae iste eligendi voluptatem nam sapiente ducimus, numquam, laudantium esse ab? Qui doloremque quia optio non dolor officia veniam, veritatis perferendis, dolorum provident quaerat exercitationem totam. Pariatur nisi enim voluptas amet repellat neque! Ducimus, consectetur? In autem nesciunt provident fugit. Soluta dolore id praesentium placeat quae dolorem unde?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora at, fugit pariatur laboriosam iure cupiditate recusandae temporibus et aperiam veritatis libero numquam eligendi, eius, molestiae aliquid? Quam magni numquam rerum non fugit optio consequatur, omnis saepe nam hic asperiores nesciunt eaque corrupti modi veniam odio deserunt libero doloremque alias perspiciatis accusantium. Eveniet, consequuntur neque itaque perspiciatis, vitae quaerat odit quod delectus eum ipsum rerum ducimus repudiandae corporis molestiae aut blanditiis officiis, consectetur dolor? Excepturi, maiores laudantium magni unde quia atque, maxime, consequuntur ducimus omnis perspiciatis aut. Quos deserunt veniam corporis aliquid maiores quam quod aspernatur sint, corrupti ipsa aperiam perferendis?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit nulla omnis possimus? Optio fugiat magni perferendis ab laudantium, sunt adipisci nulla animi. Est, suscipit molestias cupiditate qui repellat ratione aliquam adipisci optio cum atque laboriosam voluptatum ea in blanditiis quia ducimus vero iusto magnam, aspernatur hic labore quaerat mollitia ullam eligendi. Incidunt eos blanditiis suscipit sed obcaecati dolores enim delectus dolorem consectetur temporibus animi saepe qui deserunt, labore cumque dolor hic. Temporibus eligendi dolorem, molestiae voluptates aut atque enim! Omnis, molestias odit! Necessitatibus doloremque itaque nostrum magni aliquam est dolorem sint officia sit at voluptates placeat, odio, rem nam modi similique! Facere iusto quia eaque blanditiis. Suscipit placeat perferendis minima magnam quisquam debitis id enim voluptatum unde! Maiores corrupti vitae nihil aspernatur nulla aliquid officiis dolorem incidunt, optio veniam quos accusamus architecto odio harum debitis magni nostrum saepe iusto. Obcaecati nostrum nisi, nemo molestias doloribus dolore et. Recusandae rem placeat corporis libero esse facilis delectus et laborum enim saepe temporibus dolore voluptas obcaecati similique mollitia earum optio tempora magnam, qui officiis! Voluptas, perspiciatis ratione alias necessitatibus consequuntur fuga, aliquam nisi quaerat, excepturi quibusdam voluptatem ea pariatur! Eos saepe ducimus accusantium? Temporibus veritatis quas molestiae, nostrum eos minima. Odio, voluptates nesciunt!</p>
+        </article>
+        <aside>
+            <h2>Naujausi straipsniai</h2>
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        © 2022 Bit.lt
+    </footer>
+</body>
+</html>

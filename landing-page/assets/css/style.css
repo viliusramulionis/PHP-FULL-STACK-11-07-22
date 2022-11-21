@@ -84,6 +84,11 @@ section.home .left {
     color: white;
 }
 
+section.home .right {
+    width: 50%;
+    position: relative;
+}
+
 section.home .left h1 {
     font-size: 46px;
     font-weight: 600;
@@ -95,6 +100,34 @@ section.home .left p {
     line-height: 32px;
     font-size: 19px;
 }
+
+section.home .iphone {
+    max-width: 350px;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: -70px;
+}
+
+section.home .iphone img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+section.home .video-wrapper {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    padding: 19px;
+}
+
+section.home .video-wrapper video {
+    width: 100%;
+    border-radius: 40px;
+} 
 
 .buttons {
     display: flex;
