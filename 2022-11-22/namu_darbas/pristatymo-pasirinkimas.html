@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pristatymo pasirinkimas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .shipping {
+            border: 1px solid #e0e0e0;
+            background: #f5f5f5;
+            padding: 20px;
+            width: 762px;
+            margin: 0 auto;
+        }
+        .heading {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .heading h2 {
+            margin: 0 0 0 15px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .provider ul {
+            display: flex;
+            gap: 10px;
+        }
+
+        .provider ul li {
+            border: 1px solid #e0e0e0;
+            background: white;
+            width: 33.33333333%;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .provider ul li label {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .provider .provider-icon img {
+            max-height: 50px;
+        }
+
+        .provider .provider-title {
+            font-weight: 700;
+            font-size: 14px;
+            min-height: 50px;
+        }
+
+        .provider .shipping-duration {
+            font-size: 14px;
+        }
+
+        .provider .price {
+            font-weight: 700;
+            font-size: 15px;
+        }
+        
+        .provider .select-holder input {
+            width: 20px;
+            height: 20px;
+        }
+
+        .provider-form h3 {
+            font-size: 16px;
+        }
+
+        .provider-form .row {
+            display: flex;
+            gap: 10px;
+        }
+        .provider-form .column {
+            width: 50%;
+        }
+        .provider-form label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .provider-form span.red {
+            color: red;
+        }
+        .provider-form input,
+        .provider-form select {
+            width: 100%;
+            padding: 10px 10px;
+            font-size: 15px;
+            border: 1px solid #bdbdbd;
+        }
+        .mt-2 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="shipping">
+        <div class="heading">
+            <img src="icon.svg" alt="Ikona" />
+            <h2>Pristatymas į paštomatus</h2>
+        </div>
+        <div class="provider">
+            <ul>
+                <li>
+                    <label>
+                        <div class="select-holder">
+                            <input type="radio" name="shipping_provider" />
+                        </div>
+                        <div class="provider-icon">
+                            <img src="LP_Express.webp" alt="LP Express" />
+                        </div>
+                        <div class="provider-title">Atsiėmimas LP Express paštomate</div>
+                        <div class="shipping-duration">2-4 darbo dienos</div>
+                        <div class="price">2,49 €</div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div class="select-holder">
+                            <input type="radio" name="shipping_provider" />
+                        </div>
+                        <div class="provider-icon">
+                            <img src="Omniva.webp" alt="Omniva" />
+                        </div>
+                        <div class="provider-title">Atsiėmimas Omniva paštomate</div>
+                        <div class="shipping-duration">2-4 darbo dienos</div>
+                        <div class="price">1,99 €</div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div class="select-holder">
+                            <input type="radio" name="shipping_provider" />
+                        </div>
+                        <div class="provider-icon">
+                            <img src="DPD_1.webp" alt="DPD" />
+                        </div>
+                        <div class="provider-title">Atsiėmimas DPD paštomate</div>
+                        <div class="shipping-duration">2-4 darbo dienos</div>
+                        <div class="price">2,49 €</div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="provider-form">
+            <h3>Pasirinkite pristatymo vietą</h3>
+            <div class="row">
+                <div class="column">
+                    <label>
+                        <span>Miestas</span>
+                        <span class="red">*</span>
+                    </label>
+                    <select>
+                        <option>Kaunas</option>
+                        <option>Vilnius</option>
+                        <option>Klaipėda</option>
+                    </select>
+                </div>
+                <div class="column">
+                    <label>
+                        <span>Paštomato adresas (paštomatas)</span>
+                        <span class="red">*</span>
+                    </label>
+                    <select>
+                        <option>Maxima XXX (Ukmergės g. 282)</option>
+                        <option>Norfa (Minsko pl. 3)</option>
+                        <option>Banginis (P. Lukšio g. 34)</option>
+                    </select>
+                </div>
+            </div>
+            <h3>Pateikite gavėjo duomenis</h3>
+            <div class="row">
+                <div class="column">
+                    <label>
+                        <span>Vardas</span>
+                        <span class="red">*</span>
+                    </label>
+                    <input type="text" placeholder="Vardenis" />
+                </div>
+                <div class="column">
+                    <label>
+                        <span>Pavardė</span>
+                        <span class="red">*</span>
+                    </label>
+                    <input type="text" placeholder="Pavardenis" />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="column">
+                    <label>
+                        <span>Mobilaus telefono numeris</span>
+                        <span class="red">*</span>
+                    </label>
+                    <input type="text" placeholder="+3705165165" />
+                </div>
+                <div class="column"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
