@@ -1,8 +1,8 @@
 body {
     margin: 0;
     background-color: white;
-    font-family: 'Montserrat', sans-serif;
-    height: 7000px;
+    font-family: 'Open Sans', sans-serif;
+    color: #707070;
 }
 
 a {
@@ -13,6 +13,11 @@ ul {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -56,6 +61,7 @@ header nav ul a {
     display: block;
     font-size: 13px;
     transition: all 300ms ease-in-out;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header nav ul a:hover {
@@ -111,6 +117,7 @@ section.home .left h1 {
     font-size: 46px;
     font-weight: 600;
     margin: 0 0 18px;
+    color: white;
 }
 
 section.home .left p {
@@ -170,6 +177,213 @@ section.clients ul {
 
 section.clients ul li img {
     width: 85px;
+}
+
+section.features {
+    padding: 140px 0 80px;
+}
+
+section.features .heading {
+    max-width: 730px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+section.features .heading h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+
+section.features .heading p {
+    font-size: 18px;
+    line-height: 34px;
+}
+
+section.features .features-list {
+    display: flex;
+    gap: 30px;
+}
+
+section.features .feature-box {
+    text-align: center;
+}
+
+section.features .inner-box {
+    box-shadow: 0 0 30px rgb(0 0 0 / 11%);
+    padding: 50px 45px;
+    border-radius: 5px;
+    border-top: 4px solid;
+    transition: all 200ms ease-in-out;
+}
+
+section.features .inner-box:hover {
+    transform: translateY(-10px);
+}
+
+section.features .border-deep-purple {
+    border-color: #7202bb;
+}
+
+section.features .border-blue {
+    border-color: #3264f5;
+}
+
+section.features .border-purple {
+    border-color: #960ab7;
+}
+
+section.features .feature-box img {
+    max-width: 80px;
+}
+
+section.features .feature-box h3 {
+    font-weight: 600;
+}
+
+section.features .feature-box p {
+    font-size: 15px;
+    line-height: 26px;
+}
+
+section.features .feature-tag {
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 5px 7px 4px;
+    border-radius: 3px;
+}
+
+section.features .color-1 {
+    background-color: rgba(255, 22, 78, 0.15);
+    color: #ff164e;
+}
+
+section.features .color-2 {
+    background: rgba(145, 35, 255, 0.15);
+    color: #9123ff;
+}
+
+section.features .color-3 {
+    background: rgba(46, 191, 109, 0.15);
+    color: #2ebf6d;
+}
+
+section.features .color-4 {
+    background: rgba(242, 92, 127, 0.15);
+    color: #f25c7f;
+}
+
+section.features .color-5 {
+    background: rgba(52, 19, 247, 0.15);
+    color: #3413f7;
+}
+
+section.features .color-6 {
+    background: rgba(255, 124, 63, 0.15);
+    color: #ff7c3f;
+}
+
+section.tabs {
+    background-color: #f7f7f7;
+    padding: 100px 0;
+}
+
+section.tabs .tabs-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+section.tabs .tabs-nav ul li {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: #333333;
+    gap: 10px;
+    border-bottom: 2px solid #c4c4c4;
+    padding: 0 0 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section.tabs .tabs-nav ul li:hover {
+    border-color: #e9ecef;
+    cursor: pointer;
+}
+
+section.tabs .color-1 {
+    color: rgb(247, 215, 35);
+}
+
+section.tabs .color-2 {
+    color: rgb(165, 7, 212);
+}
+
+section.tabs .color-3 {
+    color: rgb(7, 31, 212);
+}
+
+section.tabs .color-4 {
+    color: rgb(234, 8, 65);
+}
+
+section.tabs .content {
+    display: flex;
+}
+
+section.tabs .left,
+section.tabs .right {
+    width: 50%;    
+}
+
+section.tabs .right {
+    text-align: right;
+}
+
+section.tabs .right img {
+    max-width: 450px;
+}
+
+section.tabs .left .number {
+    color: #7202bb;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+section.tabs .left h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+section.tabs .left p {
+    line-height: 26px;
+}
+
+section.tabs .left a {
+    color: #3264f5;
+    position: relative;
+}
+
+section.tabs .left a:hover {
+    color: #7202bb;
+}
+
+section.tabs .left a::before,
+section.tabs .left a::after {
+    content: "";
+    width: 1px;
+    height: 10px;
+    background: #3264f5;
+    position: absolute;
+    top: 10px;
+    right: -15px;
+    transform: rotate(45deg);
+}
+
+section.tabs .left a::after {
+    top: 3px;
+    transform: rotate(-45deg);
 }
 
 .buttons {
