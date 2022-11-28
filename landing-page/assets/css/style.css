@@ -1,3 +1,7 @@
+:root {
+    font-size: 16px;
+}
+
 body {
     margin: 0;
     background-color: white;
@@ -21,10 +25,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-    width: 1110px;
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 1140px;
+}
+
+.heading {
+    max-width: 730px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 1.5rem;
+}
+
+.heading p {
+    font-size: 18px;
+    line-height: 34px;
+    margin-bottom: 2rem;
 }
 
 header {
@@ -71,7 +90,7 @@ header nav ul a:hover {
 section.home {
     /* Du taškai nurodo perėjimą viena direktoriją atgal iš folderio kuriame randasi esamas failas */
     background: url('../images/hero-bg-3.jpg');
-    height: 480px;
+    height: 690px;
     padding-top: 200px;
     position: relative;
 }
@@ -92,7 +111,7 @@ section.home::after {
     content: "";
     background: url(../images/wave-line-bw-long.svg) repeat-x top left;
     width: 100%;
-    height: 29px;
+    height: 28px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -124,6 +143,7 @@ section.home .left p {
     /* line-height savybė nurodo eilutės aukštį */
     line-height: 32px;
     font-size: 19px;
+    margin-bottom: 1.8rem;
 }
 
 section.home .iphone {
@@ -183,23 +203,6 @@ section.features {
     padding: 140px 0 80px;
 }
 
-section.features .heading {
-    max-width: 730px;
-    margin: 0 auto 30px;
-    text-align: center;
-}
-
-section.features .heading h1 {
-    font-size: 36px;
-    font-weight: 600;
-    margin: 0;
-}
-
-section.features .heading p {
-    font-size: 18px;
-    line-height: 34px;
-}
-
 section.features .features-list {
     display: flex;
     gap: 30px;
@@ -239,6 +242,8 @@ section.features .feature-box img {
 
 section.features .feature-box h3 {
     font-weight: 600;
+    font-size: 18px;
+    margin: 2rem 0 1rem;
 }
 
 section.features .feature-box p {
@@ -329,6 +334,7 @@ section.tabs .color-4 {
 
 section.tabs .content {
     display: flex;
+    padding-top: 3rem;
 }
 
 section.tabs .left,
@@ -353,7 +359,7 @@ section.tabs .left .number {
 section.tabs .left h3 {
     font-size: 30px;
     font-weight: 600;
-    margin-top: 12px;
+    margin: 12px 0 1.5rem;
 }
 
 section.tabs .left p {
@@ -386,6 +392,109 @@ section.tabs .left a::after {
     transform: rotate(-45deg);
 }
 
+section.technology {
+    padding: 6rem 0;
+}
+
+section.technology img {
+    max-width: 100%;
+}
+
+section.technology h2 {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+section.technology h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+section.technology .right-column {
+    padding-top: 6rem;
+    line-height: 1.7rem;
+}
+
+section.technology .right-column i.bi {
+    color: white;
+    background-color: #6a06ad;
+    font-size: 24px;
+    width: 55px;
+    display: inline-block;
+    height: 55px;
+    text-align: center;
+    line-height: 47px;
+    border-radius: 3px;
+}
+
+section.screenshots {
+    background-color: #f7f7f7;
+    padding: 6rem 0;
+}
+
+section.screenshots .heading {
+    margin-bottom: 0;
+}
+
+section.screenshots .heading p {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+section.screenshots .slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 0 3.5rem;
+}
+
+section.screenshots .slider ul {
+    gap: 2.5rem;
+    margin-left: -7rem;
+}
+
+section.screenshots .slider img {
+    max-width: 235px;
+    border-radius: 24px;
+    border: 1px solid #ebebeb;
+}
+
+section.screenshots .iphone-frame {
+    width: 285px;
+    height: 518px;
+    background: url(../images/phone-frame2.png) no-repeat center center;
+    background-size: 100% 100%;
+    top: 3px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%)
+}
+
+section.screenshots .slider li.active img {
+    transform: scale(1.18);
+}
+
+section.app {
+    background-image: linear-gradient(to left, rgba(50, 100, 245, 0.90), rgba(74, 84, 232, 0.88), rgba(91, 66, 219, 0.85), rgba(104, 44, 203, 0.88), rgba(114, 2, 187, 0.90));
+    color: white;
+}
+
+section.app img {
+    max-width: 100%;
+}
+
+section.app h2 {
+    font-size: 38px;
+    color: white;
+    font-weight: 600;
+}
+
+section.app p {
+    font-size: 18px;
+    line-height: 32px;
+    margin: 1.5rem 0;
+}
+
 .buttons {
     display: flex;
     /* gap savybė sukuria tarpus tarp elementų, išskyrus pirmojo elemento kairės pusės atitraukimą ir paskutinio elemento atstūmimą iš dešinės */
@@ -394,7 +503,7 @@ section.tabs .left a::after {
 
 .button {
     display: block;
-    padding: 14px 20px;
+    padding: 10px 25px;
     border: 1px solid white;
     font-weight: 600;
     font-size: 15px;
@@ -402,6 +511,10 @@ section.tabs .left a::after {
     /* border-radius savybe užlenkia bloko kampus, taip pat suteikia galimybę suformuoti apskritimą */
     border-radius: 24px;
     transition: all 300ms ease-in-out;
+}
+
+.button i {
+    margin-right: .5rem;
 }
 
 .white-button {
