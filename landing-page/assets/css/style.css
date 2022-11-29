@@ -22,6 +22,7 @@ ul {
 h1, h2, h3, h4, h5, h6 {
     color: black;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 .container {
@@ -34,9 +35,8 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.heading h1 {
+.heading h2 {
     font-size: 36px;
-    font-weight: 600;
     margin: 0 0 1.5rem;
 }
 
@@ -134,7 +134,6 @@ section.home .right {
 
 section.home .left h1 {
     font-size: 46px;
-    font-weight: 600;
     margin: 0 0 18px;
     color: white;
 }
@@ -241,7 +240,6 @@ section.features .feature-box img {
 }
 
 section.features .feature-box h3 {
-    font-weight: 600;
     font-size: 18px;
     margin: 2rem 0 1rem;
 }
@@ -288,11 +286,6 @@ section.features .color-6 {
     color: #ff7c3f;
 }
 
-section.tabs {
-    background-color: #f7f7f7;
-    padding: 100px 0;
-}
-
 section.tabs .tabs-nav ul {
     display: flex;
     justify-content: center;
@@ -302,7 +295,6 @@ section.tabs .tabs-nav ul {
 section.tabs .tabs-nav ul li {
     display: flex;
     align-items: center;
-    font-weight: 600;
     font-size: 15px;
     color: #333333;
     gap: 10px;
@@ -353,12 +345,10 @@ section.tabs .right img {
 section.tabs .left .number {
     color: #7202bb;
     font-size: 70px;
-    font-weight: 600;
 }
 
 section.tabs .left h3 {
     font-size: 30px;
-    font-weight: 600;
     margin: 12px 0 1.5rem;
 }
 
@@ -392,22 +382,16 @@ section.tabs .left a::after {
     transform: rotate(-45deg);
 }
 
-section.technology {
-    padding: 6rem 0;
-}
-
 section.technology img {
     max-width: 100%;
 }
 
 section.technology h2 {
-    font-weight: 600;
     font-size: 36px;
 }
 
 section.technology h3 {
     font-size: 18px;
-    font-weight: 600;
     margin-top: 1.5rem;
 }
 
@@ -426,11 +410,6 @@ section.technology .right-column i.bi {
     text-align: center;
     line-height: 47px;
     border-radius: 3px;
-}
-
-section.screenshots {
-    background-color: #f7f7f7;
-    padding: 6rem 0;
 }
 
 section.screenshots .heading {
@@ -486,13 +465,99 @@ section.app img {
 section.app h2 {
     font-size: 38px;
     color: white;
-    font-weight: 600;
 }
 
 section.app p {
     font-size: 18px;
     line-height: 32px;
     margin: 1.5rem 0;
+}
+
+section.testimonials .testimonial {
+    padding: 1.5rem;
+    font-size: 15px;
+    line-height: 28px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 8%);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+section.testimonials .testimonial::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 0;
+    border-color: #f7f7f7 transparent transparent transparent;
+    position: absolute;
+    bottom: -30px;
+    left: 1.5rem;
+}
+
+section.testimonials blockquote {
+    margin-bottom: 5px;
+}
+
+section.testimonials .rating {
+    color: #ff7c3f;
+    letter-spacing: 3px;
+}
+
+section.testimonials .digit-rating small {
+    font-size: 13px;
+}
+
+section.testimonials .author .photo img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+section.testimonials .author-info h4 {
+    font-size: 20px;
+    margin: 0;
+}
+
+section.pricing .box {
+    background: white;
+    border: 1px solid #ebebeb;
+    padding: 1.5rem 1rem;
+}
+
+section.pricing .box h4 {
+    font-size: 18px;
+}
+
+section.pricing .box .price {
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1.5rem 0 1rem;
+    position: relative;
+}
+
+section.pricing .box .price::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgb(235,235,235);
+    background: radial-gradient(circle, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+section.pricing .box .price .amount {
+    font-weight: 700;
+}
+
+section.pricing .box .features {
+    color: rgb(132, 146, 166);
+    font-size: 14px;
+    padding: 1rem 0;
+}
+
+section.pricing .box .features li {
+    padding: .3rem 0;
 }
 
 .buttons {
@@ -530,4 +595,65 @@ section.app p {
 .transparent-button:hover {
     background-color: white;
     color: #7202bb;
+}
+
+.purple-border-button {
+    color: #7202bb;
+    border: 2px solid #7202bb;
+    transition: all .2s ease-in-out;
+    font-weight: 400;
+}
+
+.purple-border-button:hover {
+    background-color: #7202bb;
+    color: white;
+}
+
+.purple-fill-button {
+    background-color: #7202bb;
+    color: white;
+    transition: all .2s ease-in-out;
+    border: 2px solid #7202bb;
+    font-weight: 400;
+}
+
+.purple-fill-button:hover {
+    background-color: white;
+    color: #7202bb;
+}
+
+.grey-background {
+    background-color: #f7f7f7;
+}
+
+.section-padding {
+    padding: 6rem 0;
+}
+
+.pricing-buttons {
+    display: flex;
+}
+
+.pricing-buttons button {
+    background: none;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: .35rem 1rem;
+    border: 2px solid #7202bb;
+    border-right: none;
+} 
+
+.pricing-buttons button.active {
+    background: #7202bb;
+    color: white;
+} 
+
+.pricing-buttons button:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.pricing-buttons button:last-child {
+    border-right: 2px solid #7202bb;
+    border-radius: 0 3px 3px 0;
 }
