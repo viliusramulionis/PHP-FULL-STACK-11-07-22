@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kondicinė logika</title>
+</head>
+<body>
+    <script>
+        let x = 10;
+        let y = 25;
+
+        //Atspausdinti šią užduotį, jei x yra daugiau arba lygu 10, o y yra mažiau arba lygu 25
+        // if(x >= 10) {
+        //     if(y <= 25) {
+        //         console.log('Sveiki atvykę');
+        //     }
+        // }
+
+        if(x >= 10 && y <=25) {
+            console.log('Atspausdinti frazę "Sveiki atvykę", jei x yra daugiau arba lygu 10, o y yra mažiau arba lygu 25');
+        }
+
+        //Atspausdinti šią užduotį, jei x yra daugiau arba lygu 10 arba y yra mažiau arba lygu 25
+        x = 9;
+
+        if(x >= 10 || y <= 25) {
+            console.log('Atspausdinti frazę "Sveiki atvykę", jei x yra daugiau arba lygu 10 arba y yra mažiau arba lygu 25');
+        }
+
+        //Atspausdinti šią užduotį, jei x yra daugiau arba lygu 10 arba y yra mažiau arba lygu 25, arba jei abu variantai neteisingi, tačiau z yra lygu 20
+        y = 26;
+
+        let z = 20;
+
+        if(x >= 10 || y <= 25 || z === 20) {
+            console.log('Atspausdinti šią užduotį, jei x yra daugiau arba lygu 10 arba y yra mažiau arba lygu 25, arba jei abu variantai neteisingi, tačiau z yra lygu 20');
+        }
+
+        if(x === 9 && (y === 26 || z === 19)) {
+            console.log('Užduotis');
+        }
+
+        let w = false;
+
+        if(!w)
+            console.log('Nėra');
+
+        w = true;
+
+        if(w)
+            console.log('Yra');
+
+        //Ternary Operatoriai
+
+        const lytis = 'M'
+
+        //Pirmas pavyzdys tradicinio kondicinės logikos aprašymo
+
+        // if(lytis === 'M')
+        //     vardas = 'Danguolė';
+        // else 
+        //     vardas = 'Valdas';
+
+        // let vardas = 'Danguolė';
+
+        // if(lytis != 'M') 
+        //     vardas = 'Valdas';
+
+        let vardas = lytis === 'M' ? 'Danguolė' : 'Valdas';
+
+        console.log(vardas);
+
+    </script>
+</body>
+</html>

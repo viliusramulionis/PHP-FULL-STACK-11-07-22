@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        let result = '';
+
+        const skaicius = Math.random(); //Sugeneruojamas atsitiktinis skaičių po kablelio nuo 0 iki 1
+        const round = Math.round(skaicius); //Suapvilinimas pagal matematikos taisyklę
+        const floor = Math.floor(skaicius); //Suapvalinimas bet kokiu atveju iki arčiausio mažesnio sveiko skaičiaus
+        const ceil = Math.ceil(skaicius); //Suapvalinimas bet kokiu atveju iki arčiausio didesnio sveiko skaičiaus
+
+        //Suapvalinimas iki keturių skaičių po kablelio
+        const poKablelio = skaicius.toFixed(4);
+        console.log(poKablelio);
+
+        const x = 1;
+        const y = 101;
+        const z = 1082;
+        const w = 2;
+
+        console.log('Didžiausias skaičius', Math.max(x, y, z, w));
+        console.log('Mažiausias skaičius', Math.min(x, y, z, w));
+
+
+
+        //Tikriname ar stringas prasideda įvardintu žodžiu
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+        let stringas = '       Lorem Ipsum is simply dummy text of the printing and typesetting industry.           ';
+        
+        //Trim metodas išima tarpus iš stringo priekio ir galo.
+        stringas = stringas.trim();
+        console.log(stringas);
+
+        if(stringas.startsWith('Lorem'))
+            console.log('Stringas prasideda žodžiu Lorem');
+
+        if(stringas.startsWith('Ipsum', 6))
+            console.log('Stringas prasideda žodžiu Ipsum');
+
+        //Tikriname ar stringas baigiasi įvardinta fraze
+        if(stringas.endsWith('.'))
+            console.log('Stringas baigiasi tašku');
+
+        //charAt()
+        //Simbolio paėmimas iš stringo pagal 6 poziciją
+        //result = stringas.charAt(6); //I
+        //console.log(result);
+        
+        //console.log(stringas[6]);
+
+        //Paimame simbolius pagal indeksus: 6, 10, 12
+        result = stringas[6] + stringas[10] + stringas[12];
+        console.log(result);
+
+        //Triju paskutinių simbolių paėmimas
+        result = stringas.charAt(71) + stringas.charAt(72) + stringas.charAt(73);
+        console.log(result);
+
+        //Triju paskutinių simbolių paėmimas
+        result = stringas[stringas.length - 3] + stringas[stringas.length - 2] + stringas[stringas.length - 1];
+        console.log(result);
+        
+        //Ipsum žodžio ištraukimas iš stringo
+        result = stringas.substring(6, 11);
+        console.log(result);
+
+        // Triju paskutiniu simboliu paėmimas naudojant substring() metodą
+        result = stringas.substring(stringas.length - 3);
+        console.log(result);
+
+        // includes() funkcija, tikrina ar frazė egzistuoja stringe
+        if(stringas.includes('text'))
+            console.log('Žodis text egzistuoja stringe, tai validavo includes() metodas');
+
+        // indexOf() funkcija grąžina ieškomos frazės pozicijos indeksą. Antru parametru perduodama startinė pozicija.
+        result = stringas.indexOf('simply');
+        console.log(result);
+
+        // toLowerCase() Norint konvertuoti raides į mažąsias
+        result = stringas.toLowerCase();
+        console.log(result);
+
+        // toUpperCase() Norint konvertuoti raides į didžiąsias
+        result = stringas.toUpperCase();
+        console.log(result);
+
+        // Namu darbu trečia užduotis
+        // const vardas = 'Vilius';
+        // const pavarde = 'Ramulionis';
+        
+        // result = vardas[vardas.length - 3] + vardas[vardas.length - 2] + vardas[vardas.length - 1] + pavarde[pavarde.length - 3] + pavarde[pavarde.length - 2] + pavarde[pavarde.length - 1];
+        // console.log(result);
+
+    </script>   
+</body>
+</html>
