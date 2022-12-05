@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday challenge užduotys</title>
+ </head>
+ <body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }     
+
+        //Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite rand() funkcija nuo 5 iki 3000.
+        
+        const candles = rand(5, 3000);
+        let discount = 0;
+
+        if(candles > 1000)
+            discount = candles * 0.03;
+
+        if(candles > 2000)
+            discount = candles * 0.04;
+
+        console.log('Užsakymo suma', candles);
+        console.log('Nuolaida', discount);
+        console.log('Suma su nuolaida', (candles - discount).toFixed(2));
+
+        const digit1 = rand(0, 100);
+        const digit2 = rand(0, 100);
+        const digit3 = rand(0, 100);
+        let total = 0;
+        let numbers = 0;
+
+        console.log('Gauti rezultatai:', digit1, digit2, digit3);
+        console.log('Vidurkis:', ((digit1 + digit2 + digit3) / 3).toFixed(2));
+
+        if(digit1 > 10 && digit1 < 90) {
+            total += digit1;
+            numbers++;
+        }
+    
+        if(digit2 > 10 && digit2 < 90) {
+            total += digit2;
+            numbers++;
+        }
+
+        if(digit3 > 10 && digit3 < 90) {
+            total += digit3;
+            numbers++;
+        }
+
+        if(total > 0)
+            console.log('Vidurkis atmetus reikšmes:', (total / numbers).toFixed(2));
+
+    </script>
+ </body>
+ </html>

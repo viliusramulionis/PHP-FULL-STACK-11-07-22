@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While loops</title>
+</head>
+<body>
+    <script>
+        //While ciklo aprašymas
+        let i = 0;
+        let x = 0;
+
+        while(i < 10) {
+            console.log('Ciklas sukasi');
+            x += 11;
+            i++;
+        }
+
+        console.log('Gautas rezultatas: ', x);
+        
+        //Ciklo stabdymas naudojant break komandą
+        i = 0;
+
+        while(true) {
+            if(i === 10) {
+                break;
+            }
+
+            i++;
+        }
+
+        console.log('Ciklas buvo prasuktas ' + i + ' kartų');
+
+        //Ciklo ratų praleidimas
+        i = 0;
+
+        while(true) {
+            i++;
+
+            if(i === 10) {
+                break;
+            }
+
+            if(i % 2 === 0) { 
+                console.log(i % 2);
+                continue;
+            }
+        }
+
+        //Do While ciklas
+        i = 0;
+
+        do {
+            console.log('Dabartinis ciklas:', i);
+            i++;
+        } while(false);
+
+        
+    </script>
+</body>
+</html>

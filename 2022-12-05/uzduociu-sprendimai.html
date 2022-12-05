@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Pasinaudokite atsitiktinio skaičiaus generavimo funkcija. Sukurkite du kintamuosius ir naudodamiesi funkcija jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+
+        const pirmas = rand(0, 4);
+        const antras = rand(0, 4);
+        let rezultatas = 0;
+
+        if(pirmas > antras) {
+            if(antras === 0) {
+                rezultatas = 'Dalyba iš nulio negalima';
+            } else {
+                rezultatas = (pirmas / antras).toFixed(2);
+            }
+        } else {
+            resultatas = (antras / pirmas).toFixed(2);
+        }
+
+        console.log('Gautos reikšmės', pirmas, antras);
+        console.log('Rezultatas', rezultatas);
+
+        //Naudokite funkciją ir sukurkite tris kintamuosius kuriems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite vidurinę reikšmę.
+
+        const a = rand(0, 25);
+        const b = rand(0, 25);
+        const c = rand(0, 25);
+
+        const min = Math.min(a, b, c);
+        const max = Math.max(a, b, c);
+
+        console.log('Gauti skaičiai', a, b, c);
+        console.log('Mažiausia reikšmė', min);
+        console.log('Didžiausia reikšmė', max);
+
+        console.log('vidurinė reikšmė', (a + b + c) - (min + max));
+
+        //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš pirmų vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+        const vardas = 'Bradas';
+        const pavarde = 'Pitas';
+        const inicialai = vardas[0] + pavarde[0];
+
+        console.log('Inicialai', inicialai);
+
+        //Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
+        const stringas = 'abcdefghijklmnopqrstuvwxyz';
+        const number1 = rand(0, stringas.length - 1);
+        const number2 = rand(0, stringas.length - 1);
+        const number3 = rand(0, stringas.length - 1);
+        console.log(stringas[number1] + stringas[number2] + stringas[number3]);
+
+    </script>
+</body>
+</html>
