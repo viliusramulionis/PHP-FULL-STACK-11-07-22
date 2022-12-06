@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For ciklas</title>
+    <style>
+        body {
+            line-height: 8px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //While ciklas
+        console.log('While ciklas:');
+
+        let i = 0;
+
+        while(i < 10) {
+            console.log('Eilutė numeris', i);
+            i++;
+        }
+
+        //Ciklo pagalba paimame visas raides iš stringo kiekvienos iteracijos metu
+        console.log('Raidžių paėmimas iš stringo kiekvieno ciklo eigoje:');
+        const stringas = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, nobis!';
+        
+        i = 0;
+
+        while(i < stringas.length) {
+            console.log(stringas[i]);
+            i++;
+        }
+
+        //For ciklas
+
+        console.log('For ciklo inkrementai:');
+
+        for(let x = 0; x < 10; x++) {
+            console.log('Eilutės numeris', x);
+        }
+
+        console.log('Dekrementai:');
+
+        for(let x = 10; x > 0; x--) {
+            console.log('Eilutės numeris', x);
+        }
+
+        //Ciklas cikle
+
+        for(let i = 0; i < 10; i++) {
+            for(let x = 0; x < 5; x++) {
+                console.log('x');
+            }
+            console.log('y');
+        }
+
+        //While ciklas cikle 
+        
+        i = 5;
+
+        while(i > 0) {
+            console.log('Eilutės numeris:', i);
+            
+            let x = 0;
+
+            while(x < 5) {
+                console.log('Vidinės eilutės numeris', x);
+                x++;
+            }
+
+            i--;
+        }
+
+        //Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.
+        //Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines.
+        
+        const size = 25;
+        let result = '';
+
+        for(let y = 1; y <= size; y++) {
+            for(let x = 1; x <= size; x++) {
+                if(y === x || x === (size - y) + 1) {
+                    result += '<span style="color: red;">*</span>';
+                } else {
+                    result += '*';
+                }
+            }
+            result += '<br />';
+        }
+
+        document.write(result);
+
+    
+    </script>
+</body>
+</html>

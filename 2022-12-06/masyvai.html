@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const masyvas = ['Labas Pasauli', 10, false, null, 15, 20];
+        //console.log(masyvas);
+
+        const products = ['Televizorius LG', 'UABHD51651', 600.99, 1];
+
+        //Multimencinis masyvas
+        const multipleProducts = [
+            ['Televizorius LG', 'UABHD51651', 600.99, 1],
+            ['Televizorius LG', 'UABHD51651', 600.99, 1],
+            ['Televizorius LG', 'UABHD51651', 600.99, 1]
+        ];
+        
+        console.log(multipleProducts[0]);
+
+        //Masyvo ilgio nustatymas
+        console.log(multipleProducts[0].length);
+
+        //Ištrynimas iš masyvo
+        delete multipleProducts[0];
+
+        console.log(multipleProducts);
+
+        //Reikšmės masyve modifikavimas
+        multipleProducts[1] = 'Dabar elementas tapo stringu';
+        
+        console.log(multipleProducts);
+
+        //Friday Challenge užduoties modifikavimas
+
+        // const digit1 = rand(0, 100);
+        // const digit2 = rand(0, 100);
+        // const digit3 = rand(0, 100);
+        // let total = 0;
+        // let numbers = 0;
+
+        // console.log('Gauti rezultatai:', digit1, digit2, digit3);
+        // console.log('Vidurkis:', ((digit1 + digit2 + digit3) / 3).toFixed(2));
+
+        // if(digit1 > 10 && digit1 < 90) {
+        //     total += digit1;
+        //     numbers++;
+        // }
+    
+        // if(digit2 > 10 && digit2 < 90) {
+        //     total += digit2;
+        //     numbers++;
+        // }
+
+        // if(digit3 > 10 && digit3 < 90) {
+        //     total += digit3;
+        //     numbers++;
+        // }
+
+        // if(total > 0)
+        //     console.log('Vidurkis atmetus reikšmes:', (total / numbers).toFixed(2));
+
+        const skaiciai = [];
+        
+        //100 Skaičių masyvo generavimas
+
+        for(let i = 0; i < 100; i++) {
+            skaiciai[i] = rand(0, 100);
+        }
+
+        console.log(skaiciai);
+
+        //Sugeneruoto masyvo tikrinimas
+        let total = 0;
+        let excludedTotal = 0;
+        let numbers = 0;
+
+        for(let i = 0; i < skaiciai.length; i++) {
+            total += skaiciai[i];
+
+            if(skaiciai[i] > 10 && skaiciai[i] < 90) {
+                excludedTotal += skaiciai[i];
+                numbers++;
+            }
+        }
+
+        console.log('Vidurkis:', (total / skaiciai.length).toFixed(2));
+        console.log('Vidurkis atmetus reikšmes:', (excludedTotal / numbers).toFixed(2));
+
+        //Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+        const treciasMasyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            treciasMasyvas[i] = rand(5, 25);
+        }
+
+        console.log(treciasMasyvas);
+
+        //Naudodamiesi 1 uždavinio masyvu: Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+        //Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+
+        let counter = 0;
+        let max = 0;
+        let indexes = [];
+
+        for(let i = 0; i < treciasMasyvas.length; i++) {
+            if(treciasMasyvas[i] > 10)
+                counter++;
+
+            if(treciasMasyvas[i] > max)
+                max = treciasMasyvas[i];
+            
+            if(treciasMasyvas[i] === max) {
+                indexes[indexes.length] = i;
+            }    
+        }
+
+        console.log(max);
+        console.log(indexes);
+
+        //console.log(counter);
+
+        
+
+    </script>
+</body>
+</html>
