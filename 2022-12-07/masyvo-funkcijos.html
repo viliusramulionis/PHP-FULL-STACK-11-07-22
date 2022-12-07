@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvo funkcijos</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        let masyvas = ['Test', 10, 'Apelsinas', false];
+
+        //Patikrinkite masyvą ar jame yra elementas su skaičiumi dešimt.
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+        if(masyvas.includes(10))
+            console.log('Tokia reikšmė egzistuoja');
+
+        //Includes metodo aprašynmas ne funkcijoje
+        // let ieskome = 10;
+            
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     if(masyvas[i] === ieskome) {
+        //         console.log('Tokia reikšmė egzistuoja');
+        //     }
+        // }
+
+        //Stringe "Once upon a time in hollywood" pakeiskite visas pirmąsias žodžių raides didžiosiomis X
+
+        let stringas = 'Once upon a time in hollywood';
+
+        masyvas = stringas.split(' ');
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+        let naujasMasyvas = [];
+        
+        for(let i = 0; i < masyvas.length; i++) {
+            let zodis = '';
+
+            for(let x = 0; x < masyvas[i].length; x++) {
+                zodis += x === 0 ? 'X' : masyvas[i][x];
+            }
+
+            naujasMasyvas[i] = zodis;
+        }
+
+        naujasMasyvas = naujasMasyvas.join(' ');
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+
+        console.log(naujasMasyvas);
+
+        masyvas = [];
+
+        for(let i = 0; i < 100; i++) {
+            //masyvas[masyvas.length] = rand(0, 100);
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+            //Push metodas prideda reikšmę į masyvo galą
+            masyvas.push(rand(0, 100));
+        }
+
+        let norimasPridetiMasyvas = ['Apelsinai', 'Bananai', 'Obuoliai'];
+
+        // for(let i = 0; i < norimasPridetiMasyvas.length; i++) {
+        //     masyvas[masyvas.length] = norimasPridetiMasyvas[i];
+        // }
+        
+        //... spread sintakse
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+        masyvas.push(...norimasPridetiMasyvas);
+
+        console.log(masyvas);
+
+        //Norint pridėti reikšmę į masyvo priekį
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+
+        masyvas.unshift(...norimasPridetiMasyvas);
+
+        //Norint pakeisti norimas reikšmes iš masyvo
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+        norimasPridetiMasyvas = ['Audi', 'BMW', 'Fiat', 'Toyota', 'Crysler', 'Dodge'];
+    
+        masyvas.splice(30, norimasPridetiMasyvas.length, ...norimasPridetiMasyvas);
+
+        console.log(masyvas);
+
+        //Norint sujungti du masyvus
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+
+        let pirmasMasyvas = [false, false, false];
+        let antrasMasyvas = [true, true, true];
+
+        masyvas = pirmasMasyvas.concat(antrasMasyvas);
+
+        console.log(masyvas);
+        
+        //Norint pašalinti paskutinį elementą iš masyvo
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+        masyvas.pop();
+
+        console.log(masyvas);
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+
+        //Norint pašalinti pirmąjį elementą iš masyvo
+        masyvas.shift();
+
+        console.log(masyvas);
+        
+        //Norint ištrinti specifinę reikšmę
+        masyvas.splice(2, 1);
+
+        console.log(masyvas);
+
+        //Norint išrūšiuoti masyvą
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+        masyvas = ['BMW', 'Fiat', 'Toyota', 'Crysler', 'Dodge', 'Audi'];
+
+        masyvas.sort();
+
+        //Norint išrūšiuoti skaičių masyvą
+
+        masyvas = [];
+
+        for(let i = 0; i < 100; i++) {
+            masyvas.push(rand(0, 100));
+        }
+
+        //Skaičių rūšiavimui
+        masyvas.sort((a, b) => a - b);
+
+        console.log(masyvas);
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+        masyvas = ['BMW', 'Fiat', 'Toyota', 'Crysler', 'Dodge', 'Audi'];
+
+        masyvas.reverse();
+
+        console.log(masyvas);
+
+        //Patikrinimui ar reikšmė yra masyvas
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+        masyvas = '';
+
+        if(Array.isArray(masyvas)) {
+            console.log('Reikšmė yra masyvas');
+        } else {
+            console.log('Reikšmė nėra masyvas');
+        }
+
+        //Elemento indekso suradimui pagal reikšmę
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+        masyvas = ['BMW', 'Fiat', 'Toyota', 'Crysler', 'Dodge', 'Audi'];
+        
+        console.log(masyvas.indexOf('audi')); //Neradus reikšmės grąžinamas skaičius -1
+
+        
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString
+        //Norint konvertuoti masyvą į stringą su reikšmėmis atskirtomis kableliu
+
+        console.log(masyvas.toString());
+    </script>
+</body>
+</html>

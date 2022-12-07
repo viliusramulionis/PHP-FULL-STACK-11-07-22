@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        
+        //Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage. Pvz skaičius 3- rezultatas: <h3>3</h3>
+
+        document.write('<h2>Pirma užduotis</h2>');
+
+        const skaicius = rand(1, 6);
+
+        document.write('<h' + skaicius + '>' + skaicius + '</h' + skaicius + '>');
+
+        document.write('<h2>Antra užduotis</h2>');
+
+        //Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni.
+
+        // const skaiciai = [];
+
+        // for(let i = 0; i < 50; i++) {
+        //     skaiciai.push(rand(-10, 10));
+        // }
+
+        // let rezultatas = '';
+
+        // for(let i = 0; i < skaiciai.length; i++) {
+        //     if(skaiciai[i] < 0) {
+        //         rezultatas += '<span style="color: green;">' + skaiciai[i] + '</span>';
+        //     } else if(skaiciai[i] === 0) {
+        //         rezultatas += '<span style="color: red;">' + skaiciai[i] + '</span>';
+        //     } else {
+        //         rezultatas += '<span style="color: blue;">' + skaiciai[i] + '</span>';
+        //     }
+        // }
+
+        // document.write(rezultatas);
+        
+
+        const skaiciai = [];
+
+        for(let i = 0; i < 50; i++) {
+            const skaicius = rand(-10, 10);
+            let spalva = 'blue';
+
+            if(skaicius < 0) {
+                spalva = 'green'; 
+            } else if(skaicius === 0) {
+                spalva = 'red';
+            } 
+
+            skaiciai.push('<span style="color: ' + spalva + ';">' + skaicius + '</span>');
+        }
+
+        document.write(skaiciai);
+    </script>
+</body>
+</html>

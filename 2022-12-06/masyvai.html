@@ -101,6 +101,8 @@
 
         const treciasMasyvas = [];
 
+        const x = [10, 25, 30];
+
         for(let i = 0; i < 30; i++) {
             treciasMasyvas[i] = rand(5, 25);
         }
@@ -118,7 +120,7 @@
             if(treciasMasyvas[i] > 10)
                 counter++;
 
-            if(treciasMasyvas[i] > max)
+            if(treciasMasyvas[i] > max) 
                 max = treciasMasyvas[i];
             
             if(treciasMasyvas[i] === max) {
@@ -130,9 +132,6 @@
         console.log(indexes);
 
         //console.log(counter);
-
-        
-
     </script>
 </body>
 </html>
