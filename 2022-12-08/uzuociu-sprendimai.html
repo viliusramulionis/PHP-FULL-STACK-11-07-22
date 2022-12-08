@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Trečia užduotis
+        document.write('<h2>2022-12-05 Trečia užduotis</h2>');
+
+        let stringas = 'An American in Paris';
+        let rezultatas = '';
+        let balses = 'aeiyou';
+
+        balses += balses.toUpperCase();
+
+        for(let i = 0; i < stringas.length; i++) {
+            if(!balses.includes(stringas[i])) 
+                rezultatas += stringas[i];
+        }
+
+        document.write('Rezultatas: ' + rezultatas);
+
+        //Ketvirta
+        document.write('<h2>2022-12-05 Ketvirta užduotis</h2>');
+
+        let skaiciuotuvas = 0;
+        rezultatas = '';
+
+        for(let i = 0; i < 300; i++) {
+            const skaicius = rand(0, 300);
+
+            if(skaicius > 150)
+                skaiciuotuvas++;
+
+            if(skaicius > 275) {
+                rezultatas += '<span style="color: red; ">' + skaicius + '</span> ';
+            } else {
+                rezultatas += skaicius + ' ';
+            }
+        }
+
+        document.write('Rezultatas: ' + rezultatas);
+
+        //Penkta
+        document.write('<h2>2022-12-05 Penkta užduotis</h2>');
+
+        rezultatas = '';
+
+        for(let i = 1; i <= 3000; i++) {
+            if(i % 77 === 0) 
+                rezultatas += (i === 2926) ? i + '' : i + ', ';
+        }
+
+        document.write('Rezultatas: ' + rezultatas);
+
+        //Penkta
+        document.write('<h2>2022-12-06 Trečia užduotis</h2>');
+
+        //A variantas
+        document.write('<h3>A Variantas</h3>');
+
+        rezultatas = '';
+
+        while(true) {
+            const skaicius = rand(0, 1);
+
+            if(skaicius === 0) {
+                rezultatas += 'H';
+                break;
+            } else {
+                rezultatas += 'S';
+            }
+        }
+
+        document.write('Rezultatas: ' + rezultatas);
+
+        //B variantas
+        document.write('<h3>B Variantas</h3>');
+
+        rezultatas = '';
+        skaiciuotuvas = 0;
+
+        while(true) {
+            const skaicius = rand(0, 1);
+
+            if(skaicius === 0) {
+                rezultatas += 'H';
+                skaiciuotuvas++;
+            } else {
+                rezultatas += 'S';
+            }
+
+            if(skaiciuotuvas >= 3) 
+                break;
+        }
+
+        document.write('Rezultatas: ' + rezultatas);
+
+        //C variantas
+        document.write('<h3>C Variantas</h3>');
+
+        rezultatas = '';
+        skaiciuotuvas = 0;
+
+        while(true) {
+            const skaicius = rand(0, 1);
+
+            if(skaicius === 0) {
+                rezultatas += 'H';
+                skaiciuotuvas++;
+            } else {
+                rezultatas += 'S';
+                skaiciuotuvas = 0;
+            }
+
+            if(skaiciuotuvas >= 3) 
+                break;
+        }
+
+        document.write('Rezultatas: ' + rezultatas);
+
+        //Ketvirta
+        document.write('<h2>2022-12-06 Ketvirta užduotis</h2>');
+
+        let masyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            masyvas[masyvas.length] = rand(5, 25);
+        }
+
+        document.write('Rezultatas: ' + masyvas);
+
+        skaiciuotuvas = 0;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > 10)
+                skaiciuotuvas++;
+        }
+
+        document.write('<h3>A dalis</h3>');
+
+        document.write('Reikšmių didesnių nei 10 masyve yra: ' + skaiciuotuvas);
+
+        document.write('<h3>B dalis</h3>');
+
+        let max = 0;
+        let indexes = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > max) 
+                max = masyvas[i]; 
+        }
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] === max) 
+                indexes[indexes.length] = i;
+        }
+
+        document.write('Didžiausia reikšmė: ' + max + '<br />');
+        document.write('Indeksas(ai): ' + indexes);
+
+        document.write('<h3>C dalis</h3>');
+
+        rezultatas = 0;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(i % 2 === 0) 
+                rezultatas += masyvas[i];
+        }
+
+        document.write('Lyginių indeksų reikšmių suma: ' + rezultatas);
+
+        document.write('<h3>D dalis</h3>');
+
+        rezultatas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            rezultatas.push(masyvas[i] - i);
+        }
+
+        document.write('Masyvas iš kurio reikšmių atimti indeksai: ' + rezultatas);
+
+        document.write('<h3>E dalis</h3>');
+
+        for(let i = 0; i < 10; i++) {
+            const skaicius = rand(5, 25);
+            masyvas[masyvas.length] = skaicius;
+        }
+
+        document.write('Papildytas masyvas: ' + masyvas);
+
+        document.write('<h3>F dalis</h3>');
+
+        const pirmasMasyvas = [];
+        const antrasMasyvas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] % 2 === 0) {
+                pirmasMasyvas[pirmasMasyvas.length] = masyvas[i];
+            } else {
+                antrasMasyvas[antrasMasyvas.length] = masyvas[i];
+            }
+        }
+
+        document.write('Pirmas masyvas: ' + pirmasMasyvas + '<br />');
+        document.write('Antras masyvas: ' + antrasMasyvas + '<br />');
+
+        document.write('<h3>G dalis</h3>');
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(i % 2 === 0 && masyvas[i] > 15)
+                masyvas[i] = 0;
+        }
+
+        document.write('Nulintas masyvas: ' + masyvas);
+
+        document.write('<h3>H dalis</h3>');
+
+        let paskutinisMasyvas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] <= 10)
+                paskutinisMasyvas[paskutinisMasyvas.length] = masyvas[i];
+        }
+
+        document.write('Išvalytas masyvas: ' + paskutinisMasyvas);
+
+    </script>
+</body>
+</html>
