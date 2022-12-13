@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos Part 2 </title>
+</head>
+<body>
+    <script>
+        // function pirmaFunkcija(a, b, c) {
+        //     console.log(a, b, c);
+        // }
+        
+        //Arrow Function
+        const pirmaFunkcija = (a, b, c) => {
+            console.log(a, b, c);
+        }
+
+        //function aprašymas pagal funkcionalumą nėra identiškas arrow funkcijos aprašymui
+
+        pirmaFunkcija(10, 20, 30);
+
+        const array = [10, 20, 30];
+
+        array.map((value) => {
+            console.log(value);
+        });
+
+        //Norint priimti vieną parametrą
+
+        array.map(value => {
+            console.log(value);
+        });
+
+        //Jeigu atliekamas veiksmas yra vienos eilutės ilgio
+
+        array.map(value => console.log(value));
+
+        //Naujo masyvo suformavimas pasinaudojant map metodu
+
+        const newArray = array.map(value => {
+            return value + 1;
+        });
+
+        //Jeigu turime vienos eilutės veiksmą return komandos rašyti nėra būtina
+
+        const addOne = array.map(value => value + 1);
+
+        console.log(addOne);
+
+        //Jeigu parametrų priimti nereikia, skliaustelių žymėjimas yra visvien būtinas
+        array.map(() => console.log('Tekstas'));
+
+        //Jeigu norime priimti daugiau nei vieną parametrą
+        array.map((value, index) => console.log(value, index));
+
+        //Filter metodas
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+        //Skirtas išfiltruotas reikšmes iš masyvo
+
+        // const filteredArray = [];
+        
+        // for(let i = 0; i < array.length; i++) {
+        //     if(array[i] > 10)
+        //         filteredArray[filteredArray.length] = array[i];
+        // }
+
+        const filteredArray = array.filter(el => el > 10);
+
+        console.log(filteredArray);
+
+        //find metodas grąžina pirmą reikšmę pagal atitinkančią kondiciją
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+        
+        const foundElement = array.find(el => el === 30);
+
+        console.log(foundElement);
+
+        const twoLevelArray = [
+            [10, 20, 30],
+            [30, 10, 20],
+            [40, 50, 10]
+        ];
+
+        console.log(twoLevelArray);
+
+        //Jeigu norime susigrąžinti pirmą masyvą kurio elemente esančio masyvo pirmoji reikšmė yra 40
+
+        console.log(twoLevelArray.find(el => el[0] === 40));
+
+        //forEach metodas
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+        //Skirtingai nei map metodas, forEach metodas nieko negrąžina
+
+        array.forEach(el => console.log(el));
+
+        //For of ciklas yra skirtas paimti masyvo arba objekto reikšmėms
+        
+        const forOfArray = ['Labas', 'Rytas', 'Pasauli'];
+
+        for(const value of forOfArray) {
+            console.log(value);
+        }
+
+        //For in Ciklas yra skirtas paimti masyvo reikšmių indeksui
+
+        for(const index in forOfArray) {
+            console.log(index, forOfArray[index]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        function sudetis(a, b, c) {
+            //Tarp skliaustelių įrašomi perduodami parametrai
+
+            //console.log('Funkcijoje gauti parametrai:', a, b, c);
+
+            return a + b + c;
+        }
+
+        const x = 10;
+        const z = 20;
+        const y = 30;
+
+        let res = sudetis(x, z, y);
+            //Iškviečiant funkciją tarp skliaustelių perduodami argumentai
+
+        console.log('Rezultatas', res);
+
+        //Sugeneruokite 300 atsitiktinių stringų, sudarytų iš lotyniškų mažųjų raidžių. Stringo ilgis 3 - 12 (atsiktinis skaicius) simboliai.
+        //Sustabdykite stringų generavimą jei masyve turime daugiau nei 100 reikšmių kurių ilgis 5 simboliai ar daugiau.
+        
+        res = [];
+
+        function generateString(length) {
+            let stringas = 'abcdefghijklmnopqrstuvwxyz';
+            let result = '';
+
+            for(let i = 0; i < length; i++) {
+                let number = rand(0, stringas.length - 1);
+                result += stringas[number];
+            }
+
+            return result;
+        }
+
+        function generateStringArray() {
+            const res = [];
+            let counter = 1;
+
+            //return counter;
+            //Visos likusios eilutės po komandos return yra nebekompiliuojamos
+
+            for(let i = 0; i < 300; i++) {
+                if(counter > 100) 
+                    return res;
+
+                const string = generateString( rand(3, 12) );
+                res[res.length] = string;
+
+                if(string.length >= 5)
+                    counter++;
+            }
+
+            return counter;
+        }
+
+        console.log(generateStringArray());
+
+        // function test() {
+        //     return '<h1>Hello world</h1>';
+        // }
+
+        // document.write(test());
+
+        function showParams(a, b, c = 'Pagal nutylėjimą') {
+            console.log(a[0], b, c);
+        }
+
+        showParams(['Test'], 'Test', 'Pakeista reikšmė pagal nutylėjimą');
+
+        //Savadarbe push funkcija
+
+        let array = ['Reikšmė', 'Reikšmė', 'Reikšmė'];
+
+        function push(...values) {
+            for(let i = 0; i < values.length; i++) {
+                array[array.length] = values[i];
+            }
+
+            return array.length;
+        }
+
+        push('Test', 10, [], 50, 'Kitas tekstas');
+
+        console.log(array);
+
+        // function push() {
+        //     return 'test';
+        // }
+
+        // console.log(push());
+        
+        //Map metodas ciklams sukti
+
+        // function callbackFn(element, index, array) {
+        //     console.log('Elementas:', element, 'Indeksas:', index, 'Masyvas:', array);
+        // }
+
+        // array.map(callbackFn)
+
+        //Callback'ai
+
+        // let i = 0;
+
+        // function loop() {
+        //     i++;
+        //     //i = 0
+        //     if(i < 10) {
+        //         loop();
+        //     }
+        //     console.log('Test');
+        // }
+
+        // loop();
+        
+        //Savadarbė map funckcija su atsišaukimu
+
+        // function customCallbackFn(element, index, array) {
+        //     console.log('Elementas:', element, 'Indeksas:', index, 'Masyvas:', array);
+        // }
+
+        // function map(arr, clb) {
+        //     for(let i = 0; i < arr.length; i++) {
+        //         clb(arr[i], i, arr);
+        //     }
+        // }
+
+        // map(array, customCallbackFn);
+
+        //Map metodas perduodant funkciją be pavadinimo
+        array.map(function (el) {
+            console.log(el);
+        });
+    </script>
+</body>
+</html>

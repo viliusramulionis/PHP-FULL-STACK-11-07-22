@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <script>
+        // 12/13/2022 //USA formatas
+        // 2022-12-13 //Lietuviškas formatas
+        // 13/12/2022 //Olandiškas formatas
+
+        //Date.now(); //grąžinamas dabatinė data ir laikas unix timestamp pavidalu
+
+        const date = new Date();
+
+        console.log(date);
+
+        console.log(date.getDate()); //Dienos paėmimas skaitiniu pavidalu
+        console.log(date.getMonth()); //Mėnesio paėmimas skaitiniu pavidalu, tačiau turėkite omenyje, kad pirmas mėnesis prasideda nuo 0
+        console.log(date.getFullYear()); //Metų paėmimas
+        console.log(date.getHours()); //Valandų paėmimas
+        console.log(date.getMinutes()); //Minučių paėmimas
+        console.log(date.getSeconds()); //Sekundžių paėmimas
+
+        const formattedDate = date.getFullYear() + '-' + 
+                              date.getMonth() + '-' +
+                              date.getDate() + ' ' +
+                              date.getHours() + ':' +
+                              date.getMinutes() + ':' + 
+                              date.getSeconds(); 
+
+        console.log(formattedDate);
+
+        //Jeigu norime atvaizduoti tik datą vietinių formatu
+        console.log(date.toLocaleDateString('lt-LT'));
+
+        //Jeigu norime atvaizduoti tik laiką vietinių formatu
+        console.log(date.toLocaleTimeString('lt-LT'));
+
+        //Jeigu norime atvaizduoti ir laiką ir datą vietiniu formatu
+        console.log(date.toLocaleString('lt-LT'));
+    </script>
+</body>
+</html>
