@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai 12-08</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() 
+        //funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+        //“Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. 
+        //Suskaičiuokite kiek reikia smūgių.
+        //“Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, 
+        //bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), 
+        //kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+        document.write('<h1>Vinies kalimas</h1>');
+        document.write('<h2>Pirma sąlyga</h2>');
+
+        let counter = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let limit = 85;
+
+            while(limit > 0) {
+                limit -= rand(5, 20);
+                //console.log('Kalimo eiga', limit);
+                counter++;
+            }
+        } 
+
+        document.write('Įkalti penkis vinis prireikė ' + counter + ' smūgių');
+
+        document.write('<h2>Antra sąlyga</h2>');
+
+        counter = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let limit = 85;
+
+            while(limit > 0) {
+                counter++;
+
+                if(rand(0, 1) === 1) {
+                    console.log('Į vinį nepateikėme');
+                    continue;
+                }
+                    
+                limit -= rand(20, 30);
+                //console.log('Kalimo eiga', limit);
+            }
+        } 
+
+        document.write('Įkalti penkis vinis prireikė ' + counter + ' smūgių');
+
+    </script>
+</body>
+</html>

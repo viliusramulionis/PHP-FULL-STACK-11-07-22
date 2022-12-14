@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai 2022-12-13</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Sukurkite funkciją kuri priimtų parametrą "name". Jos tikslas atspausdinti naršyklėje tekstą "Labas," 
+        //ir šalia jo perduotą vardą. Pvz "Labas, Elena".
+
+        //Klasikinės funkcijos pavyzdys
+        // function welcomeMessage(name) {
+        //     document.write('Labas, ' + name);
+        // }
+
+        document.write('<h2>Pirma užduotis</h2>');
+
+        const welcomeMessage = name => {
+            document.write('Labas, ' + name);
+        }
+
+        welcomeMessage('Elena');
+        
+        //Sukurkite funkciją  kuri priimtų vieną parametrą (tekstą) 
+        //ir grąžintų atsakymą kiek simbolių yra tame tekste. 
+        //Iš funkcijos gautą rezultatą atvaizduokite naršyklėje.
+
+        document.write('<h2>Antra užduotis</h2>');
+
+        const textLength = text => text.length;
+
+        // function textLength(text) {
+        //     return text.length;
+        // }
+
+        document.write('Teksto ilgis frazei "Pastatas" yra:', textLength('Pastatas'));
+        
+        //Sukurkite funkciją kuri priimtų du parametrus "name" ir "last_name". 
+        //Funkcija turi grąžinti vieną stringą, kuriame būtų vardas ir pavardė prasidedantys didžiosiomis raidėmis.
+
+        document.write('<h2>Trečia užduotis</h2>');
+        
+        // function capitalize(name, last_name) {
+        //     let nameLetter = name[0].toUpperCase();
+        //     let surnameLetter = last_name[0].toUpperCase();
+
+        //     name = nameLetter + name.slice(1);
+        //     last_name = surnameLetter + last_name.slice(1);
+
+        //     return name + ' ' + last_name;
+        // }
+
+        const capitalize = (name, last_name) => {
+            let nameLetter = name[0].toUpperCase();
+            let surnameLetter = last_name[0].toUpperCase();
+
+            name = nameLetter + name.slice(1);
+            last_name = surnameLetter + last_name.slice(1);
+
+            return name + ' ' + last_name;
+        }
+
+        document.write(capitalize('vilius', 'ramulionis'));
+
+        //Parašykite funkciją kuri sugeneruotų 3 random skaičius nuo 0 iki 5 ir atspausdintų konsolėje 
+        //vienoje eilutėje atskirtus kableliais. Po paskutinio skaičiaus kablelio neturi būti.
+
+        document.write('<h2>Ketvirta užduotis</h2>');
+
+
+        //Pasitelkiant kintamaisiais
+        // function randomNumbersList() {
+        //     const pirmas = rand(0, 5);
+        //     const antras = rand(0, 5);
+        //     const trecias = rand(0, 5);
+
+        //     console.log(pirmas + ', ' + antras + ', ' + trecias);
+        //     document.write(pirmas + ', ' + antras + ', ' + trecias);
+        // }
+
+        // function randomNumbersList(length = 3) {
+        //     const numbers = [];
+            
+        //     for(let i = 0; i < length; i++) {
+        //         numbers[numbers.length] = rand(0, 5);
+        //     }
+
+        //     console.log(numbers.join(','));
+        //     document.write(numbers);
+        // }
+
+        const randomNumbersList = (length = 3) => {
+            const numbers = [];
+            
+            for(let i = 0; i < length; i++) {
+                numbers[numbers.length] = rand(0, 5);
+            }
+
+            console.log(numbers.join(','));
+            document.write(numbers);
+        }
+
+        randomNumbersList(20); //Sąlygoje tai nepaminėta. Susipažįstame su reikšmėmis pagal nutylėjimą
+
+        //Parašykite funkciją kuri priimtų tris parametrus "from" 
+        //ir "to" ir "limit". Patikrinkite ar šie perduodami parametrai 
+        //yra skaičiai ir pagal juos sugeneruokite masyvą, kurio ilgį nusako 
+        //"limit" parametras, o reikšmės from ir to nurodo atsitiktinį 
+        //skaičių šiuose rėžiuose.
+
+        document.write('<h2>Penkta užduotis</h2>');
+
+        function arrayGenerator(from, to, limit) {
+            if( typeof from != 'number' ||
+                typeof to != 'number' ||
+                typeof limit != 'number'
+            ) 
+                return 'Neteisingai perduoti argumentai';
+
+            if(from > to)
+                return 'Neteisingai užpildytos reikšmės';
+            
+            const masyvas = [];
+
+            for(let i = 0; i < limit; i++) {
+                masyvas[masyvas.length] = rand(from, to);
+            }
+
+            return masyvas;
+        }
+
+        console.log(arrayGenerator(10, 100, 10));
+        document.write(arrayGenerator(10, 100, 10));
+
+    </script>
+</body>
+</html>
