@@ -49,11 +49,14 @@
 
         const skaiciai = [];
 
-        for(let i = 0; i < 50; i++) {
+        for(let i = 0; i < 5; i++) {
+            console.log(i);
             const skaicius = rand(-10, 10);
+            console.log('Skaicius', skaicius);
             let spalva = 'blue';
 
             if(skaicius < 0) {
+                console.log('Atitiko');
                 spalva = 'green'; 
             } else if(skaicius === 0) {
                 spalva = 'red';

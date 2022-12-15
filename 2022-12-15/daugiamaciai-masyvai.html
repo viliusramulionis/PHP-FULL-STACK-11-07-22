@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daugiamačiai masyvai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const masyvas = [
+            //Pirmas Lygis
+            [
+                //Antras Lygis
+                [
+                    //Trecias lygis
+                    10, 
+                    20, 
+                    30
+                ],
+                //Antras Lygis
+                [
+                    //Trecias lygis
+                    'Pirmas', 
+                    'Stalas', 
+                    'Trečias'
+                ],
+                //Antras Lygis
+                [
+                    //Trecias lygis
+                    true, 
+                    false, 
+                    true
+                ],
+                //Antras Lygis
+                [
+                    //Trecias lygis
+                    null, 
+                    null, 
+                    null
+                ],
+                //Antras Lygis
+                [],
+                //Antras Lygis
+                [],
+            ],
+            'Stalas',
+            [],
+            [],
+            [],
+        ];
+
+        //console.log(masyvas);
+        //console.log(masyvas[0][1][1]);
+
+        for(const level1 in masyvas) {
+            if(masyvas[level1] === 'Stalas')
+                console.log('Radome reikšmę Stalas');
+
+            for(const level2 in masyvas[level1]) {
+                if(masyvas[level1][level2] === 'Stalas')
+                    console.log('Radome reikšmę Stalas');
+                
+                for(const level3 in masyvas[level1][level2]) {
+                    if(masyvas[level1][level2][level3] === 'Stalas')
+                        masyvas[level1][level2][level3] = 'Kėdė';
+                } 
+            }
+        }
+        
+        for(const object of masyvas[0][1]) {
+            console.log(object);
+        } 
+
+        console.log(masyvas);
+
+        console.log('Užduotis');
+
+        //Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas 
+        //su atsitiktiniu kiekiu nuo 2 iki 20 elementų. Elementų reikšmės 
+        //atsitiktinai parinktos raidės iš intervalo A-Z. Išrūšiuokite antro lygio 
+        //masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
+
+        const string = 'abcdefghijklmnopqrstuvwxyz';
+        const generatedArray = [];
+
+        console.log(generatedArray);
+
+        for(let i = 0; i < 10; i++) {
+            const count = rand(2, 20);
+            //console.log('Pirmo lygio masyvo elemento generavimas...');
+            generatedArray[i] = [];
+            
+            for(let x = 0; x < count; x++) {
+                //console.log('Antro lygio masyvo elemento generavimas...');
+                const letter = string[rand(0, string.length - 1)];
+                generatedArray[i].push(letter);
+            }
+
+            generatedArray[i].sort();
+        }
+
+        console.log(generatedArray);
+    </script>
+</body>
+</html>

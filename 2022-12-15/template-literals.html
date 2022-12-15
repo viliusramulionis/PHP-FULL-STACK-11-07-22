@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template literals</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Sukurkite 4 kintamuosius, kurie saugotų jūsų 
+        //vardą, pavardę, gimimo metus ir šiuos metus 
+        //(nebūtinai tikrus). Parašykite kodą, kuris pagal 
+        //gimimo metus paskaičiuotų jūsų amžių ir naudodamas 
+        //vardo ir pavardės kintamuosius atspausdintų tokį sakinį :
+        //"Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+
+        //document.write("<div class=\"box\">Tekstas</div>"); // Simbolis \ Žymi Javascript sintaksėje suprantamo simbolio anuliavimą kompiliatoriuje
+        //document.write('<div class="box">Tekstas</div>'); //Problemos nebelieka
+
+        const name = 'Vilius';
+        const surname = 'Ramulionis';
+        const byear = 1990;
+        const year = 2022;
+
+        //const result = 'Aš esu ' + name + ' ' + surname + '. Man yra ' + (year - byear) + ' metai(ų)';
+        const result = `Aš esu ${name} ${surname}. Man yra ${year - byear} metai(ų)`;
+        
+        console.log(result);
+
+        // Pasinaudokite atsitiktinio skaičiaus generavimo funkcija. 
+        // Sukurkite du kintamuosius ir naudodamiesi funkcija jiems priskirkite 
+        // atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. 
+        // Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+
+        const pirmas = rand(0, 4);
+        const antras = rand(0, 4);
+
+        if(pirmas > antras) {
+            if(antras === 0) {
+                console.log(`Dalyba iš nulio negalima`);
+            } else {
+                console.log(`Pirmas skaičius (${pirmas}) yra didesnis už antrajį (${antras}). Rezultatas: ${(pirmas / antras).toFixed(2)}`);
+            }
+        } else {
+            console.log(`Antras skaičius (${antras}) yra didesnis už pirmąjį (${pirmas}). Rezultatas: ${(antras / pirmas).toFixed(2)}`);
+        }
+
+    </script>
+</body>
+</html>

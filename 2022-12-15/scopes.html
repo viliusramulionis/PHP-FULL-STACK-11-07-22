@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes</title>
+</head>
+<body>
+    <!-- <script>
+        //Global Scope
+        const user = 'Eglė';
+    </script>
+    <script>
+        const email = 'egle@gmail.com';
+    </script>
+    <script src="external.js"></script> -->
+
+    <!-- <script>
+        let modified_user = 'Algirdas';
+
+        function test() {
+            //Function scope
+            const user = 'Eglė';
+            let email = 'egle@gmail.com';
+
+            modified_user = 'Juozas';
+        }
+
+        test();
+
+        // console.log(user); //Kintamojo neranda
+        // console.log(email); //Kintamojo neranda
+
+        console.log(modified_user); //Duomenys nepasikeicia
+    </script> -->
+
+    <!-- <script>
+        {
+            //Block scope (if, for, while, switch)
+        }
+
+        let email = 'petras@gmail.com'; //Kintamasis sukurtas global scope
+        
+        if(true) {
+            const user = 'Petras';
+            email = 'algirdas@gmail.com';
+        }
+
+        //console.log(user); //Kintamasis nerastas
+        console.log(email);
+    </script> -->
+
+    <!-- <script>
+        //Block scope yra žymimas riestiniais skliaustais išskyrus funkcijas
+        {
+            let user = 'Petras';
+        }
+
+        console.log(user);
+    </script> -->
+
+    <!-- <script>
+        // user = 'Adomas';
+        // var user = 'Adomas';
+        // //Po 2015
+        // let user = 'Adomas';
+        // const user = 'Adomas';
+
+        var user = 'Juozas';
+        var user = 'Adomas';
+
+        function test() {
+            var email = 'adomas@gmail.com';
+            var user = 'Ieva';
+            console.log(user);
+        }
+
+        test();
+
+        console.log(user);
+        console.log(email);
+    </script> -->
+
+    <!-- <script>
+        var user = 'Adomas';
+
+        { //Block Scope
+            var user = 'Ieva';
+        }
+
+        console.log(user);
+    </script> -->
+
+    <!-- Kintamieji globaliam scope pasiekiami visame kode -->
+    <!-- <script>
+        const user = 'Petras';
+    </script>
+
+    <script>
+        console.log(user);
+    </script> -->
+</body>
+</html>
