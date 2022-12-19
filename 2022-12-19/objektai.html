@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektai</title>
+</head>
+<body>
+    <script>
+        const array = [10, 20, 30]; 
+        //console.log(array.length);               
+        const person = {
+            name: 'Peter', //Property (savybė)
+            surname: 'Smith',
+            likes: ['Bėgiojimas', 'Šachmatai', 'Apsipirkimai'],
+            getName: function() { //Method (metodas)
+                //this nurodo kreipimąsi į objektą kuriame randasi metodas
+                //arrow funkcija savyje neturi raktinio zodzio this
+                return this.name;
+            },
+            setName: function(name) {
+                this.name = name;
+                return 'Naujas vardas yra: ' + name;
+            }
+        } //Objekto aprašymo sintaksė
+
+        console.log(person.name.toUpperCase());
+        console.log(person.surname);
+        console.log(person.likes.join(','));
+
+        person.name = 'John';
+        console.log(person.getName());
+        console.log(person.setName('Adam'));
+        person.name = 'Andželika';
+
+        console.log(person);
+
+        person.getLikes = function() {
+            return this.likes.join(',');
+        }
+
+        console.log(person.getLikes());
+    </script>
+</body>
+</html>

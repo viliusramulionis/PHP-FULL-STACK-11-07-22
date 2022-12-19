@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai 12-16</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.
+        document.write('<h2>Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.</h2>');
+
+        const masyvas = [];
+
+        for(let i = 0; i < 10; i++) {
+            masyvas[i] = [];
+
+            for(let x = 0; x < 5; x++) {
+                const digit = rand(5, 25);
+
+                masyvas[i][x] = digit;
+            }
+        }
+
+        console.log(masyvas);
+    </script>
+</body>
+</html>

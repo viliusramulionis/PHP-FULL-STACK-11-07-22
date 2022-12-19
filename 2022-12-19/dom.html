@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Statiškai priskirtas turinys</h1>
+    </div>
+    <script>
+        //DOM - Document Object Model
+        //DOM Manipuliacija
+        //document.write('<h1>Test</h1>');
+
+        //getElementById() metodas suranda elementą pagal id atributą
+        //innerHTML savybė leidžia pridėti html turinį į elementą
+
+        // const doc = {
+        //     elementas: {
+        //         innerHTML: ''
+        //     },
+        //     getElementById: function(id) {
+        //         return this.elementas;
+        //     }
+        // }
+
+        document.getElementById('app').innerHTML += '<h2>Dinamiškai integruotas turinys</h2>';
+        document.getElementById('app').innerHTML += '<h3>Dinamiškai pridėta antra eilutė</h3>';
+
+        //innerText savybė skirta priskirtą tekstą, HTML turinys negeneruojamas
+        document.getElementById('app').innerText = '<h1>Naudojamės innerText savybe</h1>';
+        //textContent greičiau veikinti alternatyva tekstinio turinio priskyrimui.
+        document.getElementById('app').textContent = '<h1>Naudojamės textContent savybe</h1>';
+        
+        document.getElementById('app').innerHTML = '<div class="box"></div>';
+
+        document.getElementById('app').querySelector('.box').textContent = 'Labas';
+        
+        //querySelector metodas leidžia ieškoti elementų naudojantis css sintaksės kreipiniais
+        document.querySelector('#app .box').textContent = 'Sudie';
+
+        //Panaikiname visą turinį body Elemente
+        document.querySelector('body').innerHTML = '';
+    </script>
+</body>
+</html>
