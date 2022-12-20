@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Caption</title>
+</head>
+<body>
+    <h1>Nuotraukų galerija</h1>
+    <div>
+        <a href="#" onclick="clicked(event, '.picture1')">
+            <img src="https://picsum.photos/200/300?random=1" alt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, praesentium hic laudantium possimus iste reiciendis sed dolor inventore autem. Qui, expedita quisquam? Illum voluptatum eaque obcaecati? Doloribus eius soluta natus ullam accusamus deserunt? Delectus eius praesentium porro. Dolorum voluptatum voluptatibus animi excepturi ea incidunt veniam, distinctio vitae beatae perspiciatis? Minima?">
+            <div class="picture1"></div>
+        </a>
+        <a href="#" onclick="clicked(event, '.picture2')">
+            <img src="https://picsum.photos/200/300?random=2" alt="Qui, expedita quisquam? Illum voluptatum eaque obcaecati? Doloribus eius soluta natus ullam accusamus deserunt? Delectus eius praesentium porro. Dolorum voluptatum voluptatibus animi excepturi ea incidunt veniam, distinctio vitae beatae perspiciatis? Minima?">
+            <div class="picture2"></div>
+        </a>
+        <a href="#" onclick="clicked(event, '.picture3')">
+            <img src="https://picsum.photos/200/300?random=3" alt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, praesentium hic laudantium possimus iste reiciendis sed dolor inventore autem.">
+            <div class="picture3"></div>
+        </a>
+    </div>
+
+    <script>
+        function clicked(event, className) {
+            //Standartinių HTML elementų veiksmų sustabdymui naudojama eilutė.
+            event.preventDefault();
+
+            document.querySelector(className).textContent = event.target.getAttribute('alt');
+        }
+    </script>
+</body>
+</html>

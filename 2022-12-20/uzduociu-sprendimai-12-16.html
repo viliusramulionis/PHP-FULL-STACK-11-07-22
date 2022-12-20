@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai 12-16</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.
+        document.write('<h2>Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.</h2>');
+
+        const masyvas = [];
+
+        for(let i = 0; i < 10; i++) {
+            masyvas[i] = [];
+
+            for(let x = 0; x < 5; x++) {
+                const digit = rand(5, 25);
+
+                masyvas[i][x] = digit;
+            }
+        }
+
+        console.log(masyvas);
+
+        document.write(`<h2>Suskaičiuokite kiek masyve yra elementų didesnių už 10;</h2>`);
+
+        let largerThanTen = 0;
+
+        for(const value of masyvas) {
+            for(const innerValue of value) {
+                if(innerValue > 10)
+                    largerThanTen++;
+            }
+        }
+
+        document.write(`Reikšmių didesnių nei dešimt masyve yra: ${largerThanTen}`)
+    
+        document.write(`<h2>Raskite didžiausio elemento reikšmę;</h2>`);
+
+        let max = 0;
+
+        for(const value of masyvas) {
+            const found = Math.max(...value);
+            if(found > max)
+                max = found;
+        }
+
+        document.write('Didžiausia elementų reikšmė' + max);
+
+        document.write('<h2>Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)</h2>');
+
+        const sums = [0, 0, 0, 0, 0];
+
+        for(const value of masyvas) {
+            sums[0] += value[0];
+            sums[1] += value[1];
+            sums[2] += value[2];
+            sums[3] += value[3];
+            sums[4] += value[4];
+        }
+
+        document.write('Masyvų sumos: ', sums);
+    </script>
+</body>
+</html>
