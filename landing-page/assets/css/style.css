@@ -56,6 +56,11 @@ header {
     z-index: 2;
 }
 
+header.scrolling {
+    background:rgb(169, 12, 172);
+    z-index: 10;
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
@@ -380,6 +385,14 @@ section.tabs .left a::after {
 section.tabs .left a::after {
     top: 3px;
     transform: rotate(-45deg);
+}
+
+section.tabs .content {
+    display: none;
+}
+
+#section-1 {
+    display: flex;
 }
 
 section.technology img {

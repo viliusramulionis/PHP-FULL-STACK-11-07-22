@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and setInteval</title>
+</head>
+<body>
+    <script>
+        //setTimeout funkcija aktyvuojama vieną kartą
+        setTimeout(() => {
+            console.log('Veiksmas įvyko po trijų sekundžių');
+        }, 3000);
+
+        //setInterval funkcija aktyvuojama vis iš naujo pagal nurodytą laiko tarpą
+        setInterval(() => {
+            console.log('Veiksmas kartojasi kas tris sekundes');
+        }, 3000);
+    </script>
+</body>
+</html>

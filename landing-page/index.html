@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href='https://unpkg.com/css.gg/icons/all.css' rel='stylesheet'>
     <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -123,27 +124,63 @@
             <div class="container">
                 <div class="tabs-nav">
                     <ul>
-                        <li>
+                        <li data-target="section-1">
                             <i class="gg-arrow-top-right-r color-1"></i>
                             Latest Technology
                         </li>
-                        <li>
+                        <li data-target="section-2">
                             <i class="gg-ethernet color-2"></i>
                             Connect Wifi
                         </li>
-                        <li>
+                        <li data-target="section-3">
                             <i class="gg-shopping-cart color-3"></i>
                             Online Shop
                         </li>
-                        <li>
+                        <li data-target="section-4">
                             <i class="gg-display-grid color-4"></i>
                             Display Store
                         </li>
                     </ul>
                 </div>
-                <div class="content">
+                <div id="section-1" class="content">
                     <div class="left">
                         <div class="number">01.</div>
+                        <h3>Fully Branded Portal</h3>
+                        <p>Assertively incentivize long-term high-impact scenarios whereas accurate imperatives.</p>
+                        <p>Quickly communicate multimedia based materials for enabled channels. Seamlessly disintermediate robust best practices for B2C e-tailers. Efficiently procrastinate prospective experiences.</p>
+                        <a href="#">Learn more about this</a>
+                    </div>
+                    <div class="right">
+                        <img src="assets/images/svg-icon-1.svg" alt="Icon" />
+                    </div>
+                </div>
+                <div id="section-2" class="content">
+                    <div class="left">
+                        <div class="number">02.</div>
+                        <h3>Fully Branded Portal</h3>
+                        <p>Assertively incentivize long-term high-impact scenarios whereas accurate imperatives.</p>
+                        <p>Quickly communicate multimedia based materials for enabled channels. Seamlessly disintermediate robust best practices for B2C e-tailers. Efficiently procrastinate prospective experiences.</p>
+                        <a href="#">Learn more about this</a>
+                    </div>
+                    <div class="right">
+                        <img src="assets/images/svg-icon-1.svg" alt="Icon" />
+                    </div>
+                </div>
+                <div id="section-3" class="content">
+                    <div class="left">
+                        <div class="number">03.</div>
+                        <h3>Fully Branded Portal</h3>
+                        <p>Assertively incentivize long-term high-impact scenarios whereas accurate imperatives.</p>
+                        <p>Quickly communicate multimedia based materials for enabled channels. Seamlessly disintermediate robust best practices for B2C e-tailers. Efficiently procrastinate prospective experiences.</p>
+                        <a href="#">Learn more about this</a>
+                    </div>
+                    <div class="right">
+                        <img src="assets/images/svg-icon-1.svg" alt="Icon" />
+                    </div>
+                </div>
+                <div id="section-4" class="content">
+                    <div class="left">
+                        <div class="number">04.</div>
                         <h3>Fully Branded Portal</h3>
                         <p>Assertively incentivize long-term high-impact scenarios whereas accurate imperatives.</p>
                         <p>Quickly communicate multimedia based materials for enabled channels. Seamlessly disintermediate robust best practices for B2C e-tailers. Efficiently procrastinate prospective experiences.</p>
@@ -308,13 +345,13 @@
                             <p>Monotonectally mesh visionary supply chains before plug-and-play interfaces. Globally benchmark worldwide information after clicks-and-mortar channels.</p>
                         </div>
                         <div class="pricing-buttons">
-                            <button class="active">Monthly</button>
-                            <button>Yearly</button>
+                            <button class="active" data-basic="19" data-standard="49">Monthly</button>
+                            <button data-basic="199" data-standard="549">Yearly</button>
                         </div>
                     </div>
                     <div class="col-7">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-6" data-plan="basic">
                                 <div class="box text-center">
                                     <h4>Basic</h4>
                                     <div class="d-flex justify-content-center price">
@@ -337,7 +374,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6" data-plan="standard">
                                 <div class="box text-center">
                                     <h4>Standard</h4>
                                     <div class="d-flex justify-content-center price">

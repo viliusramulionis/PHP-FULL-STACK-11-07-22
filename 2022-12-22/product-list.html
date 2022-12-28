@@ -140,7 +140,9 @@
 
         const editItem = (index) => {
             //document.querySelector('form').setAttribute('data-edit', index);
+
             document.querySelector('form').dataset.edit = index;
+
             document.querySelector('form button').textContent = editLabel;
             // document.querySelector('form button[data-button="add"]').style.display = 'none';
             // document.querySelector('form button[data-button="edit"]').style.display = 'inline-block';
@@ -187,7 +189,7 @@
 
             showResults();
         }
-
+        
         showResults();
     </script>
 </body>
