@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <div id="app"></div>
+    <button onclick="getPhoto()">Nauja nuotrauka</button>
+    
+    <script>
+        //JSON informacija visuomet bus stringas
+        const jsonData = [
+            {
+                name: 'Treniruoklis',
+                qty: 5,
+                bool: true,
+                price: 199.99,
+                location: 'Kaunas',
+                picture: 'https://picsum.photos/50/50?random=1'
+            },
+            {
+                name: 'Kasos aparatas',
+                qty: 64,
+                price: 175.45,
+                location: 'Vilnius',
+                picture: 'https://picsum.photos/50/50?random=2'
+            },
+            {
+                name: 'Dviratis',
+                qty: 9,
+                price: 159.58,
+                location: 'Klaipėda',
+                picture: 'https://picsum.photos/50/50?random=3'
+            }
+        ];
+
+        //JSON.parse() - JSON Duomenų iššifravimas
+        //JSON.strigify() - JSON Duomenų užšifravimas
+        const encodedString = JSON.stringify(jsonData);
+
+        //console.log(encodedString);
+
+        const data = JSON.parse(encodedString);
+
+        delete data[0];
+
+        //console.log(JSON.stringify(data));
+
+        //CRUD
+        //C - Create - POST
+        //R - Read   - GET
+        //U - Update - PUT
+        //D - Delete - DELETE
+
+        //Išorinių duomenų paėmimui skirta funkcija
+        //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        // fetch('https://appbeats.themetags.com/')
+        // .then(resp => resp.text())
+        // .then(resp => {
+        //     document.getElementById('app').innerHTML = resp;
+        // });
+
+        //Atsitiktinės katės nuotraukos paėmimas naudojantis API:
+        //https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
+        
+        // console.log('Prieš paleidimą');
+
+        // fetch('https://api.thecatapi.com/v1/images/search') //1s
+        // .then(resp => resp.json()) //json() metodas automaškai iškonvertuoja json stringą
+        // .then(resp => { 
+        //     console.log('Paleidimas baigtas');
+        //     document.getElementById('app').innerHTML = `<img src=${resp[0].url} />`;
+        // });
+
+        // console.log('Po paleidimo');
+
+        const getPhoto = () => {
+            fetch('https://api.thecatapi.com/v1/images/search') //1s
+            .then(resp => resp.json()) //json() metodas automaškai iškonvertuoja json stringą
+            .then(resp => { 
+                document.getElementById('app').innerHTML = `<img src=${resp[0].url} />`;
+            });
+        }
+
+        getPhoto();
+
+        
+    </script>
+</body>
+</html>

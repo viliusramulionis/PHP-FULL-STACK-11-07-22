@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog breeds</title>
+</head>
+<body>
+    <div id="app"></div>
+    <input type="text" name="search" />
+    <button onclick="getPhoto()">Get Picture</button>
+
+    <script>
+        //https://dog.ceo/dog-api/documentation/
+
+        const getPhoto = () => {
+            const breed = document.querySelector('[name="search"]').value;
+
+            fetch('https://dog.ceo/api/breed/' + breed + '/images/random')
+            .then(resp => resp.json())
+            .then(resp => {
+                if(resp.status === 'success') {
+                    document.getElementById('app').innerHTML = `<img src="${resp.message}" />`;
+                } else { 
+                    document.getElementById('app').textContent = 'Tokia veilsė nerasta';
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
