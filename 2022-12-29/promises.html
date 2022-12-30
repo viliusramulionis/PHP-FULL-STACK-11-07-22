@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // const atnesk = (url) => new Promise((ivykdyta, neivykdyta) => {
+        //     const tikimybe = rand(0, 1);
+        //     setTimeout(() => {
+        //         if(tikimybe === 1) {
+        //             ivykdyta('Pažadas yra išpildytas');
+        //         } else {
+        //             neivykdyta('Užklausa nepavyko');
+        //         }
+        //     }, 2000);
+        // });
+
+        // console.log('Kodo pradžia');
+
+        // atnesk('https://google.com')
+        // .then(atsakymas => console.log(atsakymas))
+        // .catch(klaida => console.log(klaida));
+
+        //console.log('Kodo pabaiga');
+
+        //Galimybė daryti palaukimus statybdant asinchroniškumą yra turint dvi situacijas:
+        //Asinchroninė funkcija
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+        //Modulis
+
+
+        const atnesk = (url) => new Promise((ivykdyta, neivykdyta) => {
+            const tikimybe = rand(0, 1);
+            setTimeout(() => {
+                if(tikimybe === 1) {
+                    ivykdyta('Pažadas yra išpildytas');
+                } else {
+                    neivykdyta('Užklausa nepavyko');
+                }
+            }, 2000);
+        });
+
+        console.log('Kodo pradžia');
+
+        // atnesk('https://google.com')
+        // .then(atsakymas => console.log(atsakymas))
+        // .catch(klaida => console.log(klaida));
+
+        //Asinchroninės funkcijos aprašymas arrow formatu
+        //const informacija = async () => {}
+
+        //Asinchroninės funkcijos aprašymas klasikiniu formatu
+        // async function informacija () {
+        // }
+        
+        // const informacija = async () => {
+        //     try {
+        //         const atsakymas = await atnesk('https://google.com');
+
+        //         console.log(atsakymas); //Pazadas yra ispildytas
+
+        //         console.log('Kodo pabaiga');    
+        //     } catch(klaida) {
+        //         console.log(klaida);
+        //     }
+        // }
+
+        // informacija();
+
+        const getAdresas = async () => {
+            try {
+                const atsakymas = await fetch('https://dog.ceo/api/breeds/image/random');
+                const atsakymoObjektas = await atsakymas.json();
+
+                console.log(atsakymoObjektas.message);
+            } catch(klaida) {
+                console.log(klaida);
+            }
+
+            console.log('Finally done');
+        }
+
+        getAdresas();
+        
+
+        fetch('https://google.com')
+        .then(ats1 => ats1.json())
+        .then(ats1 => {
+            
+            fetch('https://yahoo.com')
+            .then(ats2 => ats2.json())
+            .then(ats2 => {
+
+                fetch('https://apple.com')
+                .then(ats3 => ats3.json())
+                .then(ats3 => {
+
+                    console.log(ats3)
+
+                });
+
+            });
+
+        });
+
+        const daugUzklausu = async () => {
+            const ats1 = await fetch('https://google.com');
+            const ats1Obj = await ats1.json();
+
+            const ats2= await fetch('https://yahoo.com/?parametras=' + ats1Obj.parametras);
+            const ats2Obj = await ats2.json();
+
+            const ats3= await fetch('https://yahoo.com');
+            const ats3Obj = await ats3.json();
+
+            console.log(ats3Obj);
+        }
+
+    </script>
+</body>
+</html>
