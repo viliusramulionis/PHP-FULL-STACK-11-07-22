@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Database</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin-top: 3rem;
+        }
+        .container {
+            max-width: 768px;
+        }
+
+        #results img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <form class="input-group flex-nowrap" onsubmit="gerimuPaieska(event)">
+                <input type="text" name="cocktail" placeholder="Įveskite kokteilio pavadinimą" class="form-control" />
+                <button class="btn btn-primary">Ieškoti</button>
+            </form>
+            <div class="filters row mt-3">
+                <div class="col-4">
+                    <select name="alcohol_filter" class="form-control" onchange="alkholioFiltravimas(event)">
+                        <option value="">Pasirinkite filtravimą:</option>
+                        <option value="Alcoholic">Alkoholiniai</option>
+                        <option value="Non_Alcoholic">Nealkoholiniai</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <select name="category_filter" class="form-control" onchange="kategorijosFiltravimas(event)">
+                        <option value="">Pasirinkite kategoriją</option>
+                    </select>
+                </div>
+            </div>
+            <div id="results" class="mt-3"></div>
+        </div>
+    </div>
+    <script>
+        const bazinisAdresas = 'https://www.thecocktaildb.com/api/json/v1/1/';
+
+        const duomenuPadavimas = async (url) => {
+            const rezultatas = await fetch(bazinisAdresas + url);
+
+            return rezultatas.json();
+        }
+
+        const gerimuPaieska = (e, url = false) => {
+            e.preventDefault();
+            
+            if(!url) {
+                const name = document.querySelector('[name="cocktail"]').value;
+                url = 'search.php?s=' + name;
+            }
+            
+            duomenuPadavimas(url)
+            .then(atsakymas => {
+                console.log(atsakymas.drinks);
+
+                if(!atsakymas.drinks) return;
+
+                let html = '<div class="row">';
+
+                atsakymas.drinks.map(gerimas => {
+                    html += `
+                        <div class="col-4 mb-4">
+                            <h5>${gerimas.strDrink}</h5>
+                            <a href="#" onclick="showDrink(${gerimas.idDrink})">
+                                <img src="${gerimas.strDrinkThumb}" alt="${gerimas.strDrink}" />
+                            </a>
+                        </div>
+                    `;
+                });
+
+                html += '</div>';
+
+                document.getElementById('results').innerHTML = html;
+            });
+        } 
+
+        const showDrink = (id) => {
+            console.log(id);
+
+            duomenuPadavimas('lookup.php?i=' + id)
+            .then(atsakymas => {
+                const gerimas = atsakymas.drinks[0];
+                let html = `<div class="row">
+                                <div class="col-5">
+                                    <img src="${gerimas.strDrinkThumb}" alt="${gerimas.strDrink}" />
+                                </div>
+                                <div class="col-7">
+                                    <h2>${gerimas.strDrink}</h2>
+                                    <div class="info">
+                                        <span>Category: ${gerimas.strCategory}</span>
+                                        <span>${gerimas.strAlcoholic}</span>
+                                        <span>${gerimas.strGlass}</span>
+                                    </div>
+                                    <div class="description">${gerimas.strInstructions}</div>
+                                    <h6>Ingredients:</h6>
+                                    <ul>`;
+
+                            for(let i = 1; i <= 15; i++) {
+                                if(gerimas['strIngredient' + i]) {
+                                    let ingredient = gerimas['strIngredient' + i] + ' ';
+
+                                    if(gerimas['strMeasure' + i])
+                                        ingredient += gerimas['strMeasure' + i];    
+
+                                    html += `<li>${ingredient}</li>`;
+                                }
+                            }
+                                    
+                            html += `</ul>
+                                <a href="#" onclick="gerimuPaieska(event)" class="btn btn-primary">Atgal į gėrimų sąrašą</a>
+                                </div>
+                            </div>`;
+
+                document.getElementById('results').innerHTML = html;
+            })
+        }
+        
+        const alkholioFiltravimas = (e) => {
+            e.preventDefault();
+
+            if(e.target.value === '') return;
+
+            gerimuPaieska(e, 'filter.php?a=' + e.target.value);
+        }
+
+        const kategorijosFiltravimas = (e) => {
+            e.preventDefault();
+
+            if(e.target.value === '') return;
+
+            gerimuPaieska(e, 'filter.php?c=' + e.target.value);
+        }
+
+        const kategorijuSarasas = () => {
+            duomenuPadavimas('list.php?c=list')
+            .then(atsakymas => {
+                let html = '';
+
+                atsakymas.drinks.map(gerimas => {
+                    html += `<option value="${gerimas.strCategory.replaceAll(' ', '_')}">${gerimas.strCategory}</option>`;
+                });
+
+                document.querySelector('[name="category_filter"]').innerHTML += html;
+            });
+        }
+
+        kategorijuSarasas();
+
+    </script>
+</body>
+</html>
