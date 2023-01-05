@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        //Inkapsuliacija
+        class Automobiliai {
+            durys = 15;
+            static veidrodeliai = 3;
+
+            constructor(vairas, langai) {
+                //Savybės (property) priskiriamos su raktiniu žodžius this
+                this.vairas = vairas;
+                this.langai = langai;
+            }
+
+            //Funkcija patalpinta klasėje yra vadinama metodu
+            ratai() {
+                this.variklis = 'Toyota';
+                return 'Mašina turi keturis ratus';
+            }
+
+            getVairas() {
+                return this.variklis;
+                return 'Vairas automobilyją yra: ' + this.vairas;
+            }
+
+            setVairas(kiekis) {
+                this.vairas = kiekis;
+                 
+                return this;
+            }
+
+            setProperties(vairas, langai) {
+                this.vairas = vairas;
+                this.langai = langai;
+
+                return this;
+            }
+
+            kedes(number) {
+                this.kedes = [];
+
+                for(let i = 1; i <= number; i++) {
+                    this.kedes.push('Kėdė ' + i);    
+                }
+
+                return this;
+            }
+            
+        }
+
+        //Instancija yra objektas grąžinamas po klasės iššaukimo (Instance)
+        const auto = new Automobiliai(1, 6);
+
+        console.log(auto);
+
+        console.log(auto.setVairas(10).getVairas());
+
+        console.log(auto.setProperties(80, 1561));
+
+        console.log(auto.kedes(4));
+
+        for(let i = 1; i <= 10; i++) {
+            const car = new Automobiliai(rand(0, 5), rand(0, 8));
+
+            console.log(car);
+        }
+
+        console.log(Automobiliai.veidrodeliai);
+
+        class StatineKlase {
+            static operation = 'add';
+
+            static math(a, b) {
+                return a + b;
+            }
+
+            static url = 'https://api.google.com/';
+        }
+        
+        StatineKlase.operation = 'divide';
+
+        console.log(StatineKlase.operation);
+        
+        console.log(StatineKlase.math(5, 3));
+
+        console.log(StatineKlase.url);
+        
+        class Traktoriai extends Automobiliai {
+            ratuDydis = 250;
+
+            constructor() {
+                //super komanda nurodo kreipimąsi į tėvinę klasę kurią norime praplėsti
+                super(10, 20);
+
+                delete this.vairas;
+            }
+        }
+
+        const traktoriai = new Traktoriai();
+        console.log(traktoriai.kedes(5));
+        console.log(new Automobiliai(5, 20));
+
+        class Salonas {
+            automobiliai = [];
+
+            constructor() {
+                for(let i = 0; i < 100; i++) {
+                    this.automobiliai.push( new Automobiliai(rand(0, 10), rand(0, 10)) );
+                }
+            }
+        }
+
+        const salonas = new Salonas();
+
+        console.log(salonas.automobiliai[6]);
+
+        class DeveloperisA {
+            static #privatiStatineSavybe = 'Privati statine savybė';
+            static weight = 76;
+
+            constructor() {
+                console.log(DeveloperisA.#privatiStatineSavybe);
+            }
+
+            #privatiSavybe = 'Privati savybė';
+            
+            publicMethod() {
+                return 'Šis metodas yra viešas';
+            }
+
+            #privateMethod() {
+                return 'Šis metodas yra privatus';
+            }
+        }
+        
+        class DeveloperisB extends DeveloperisA {
+            constructor() {
+                super();
+                console.log(this.publicMethod());
+            }
+        }
+
+        const devB = new DeveloperisB();
+
+        console.log(devB);
+
+    </script>
+</body>
+</html>
