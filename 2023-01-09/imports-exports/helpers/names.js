@@ -1,0 +1,1 @@
+export const randomName = 'Leo DiCaprio';

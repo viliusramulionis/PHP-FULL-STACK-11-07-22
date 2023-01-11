@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data imports</title>
+</head>
+<body>
+    <script>
+        const data = {
+            vaisiai: 'Obuoliai, Apelsinai, Bananai, Greipfrutai',
+            automobiliai: 'BMW, Audi, Fiat, Volvo',
+            kompiuteriai: 'HP, Lenovo, Sony, Apple'
+        }
+
+        const { automobiliai, kompiuteriai } = data;
+
+        const masyvas = ['Labas', 'Pasauli', 'Trecia'];
+
+        const [ pirma, antra ] = masyvas;
+        
+        const first = masyvas[0];
+        const second = masyvas[1];
+
+        console.log(antra);
+    </script>
+</body>
+</html>

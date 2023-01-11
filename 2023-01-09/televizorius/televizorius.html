@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Televizorius - OOP</title>
+    <style>
+        #pultelis {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #pultelis img {
+            max-width: 100%;
+        }
+        #pultelis .button {
+            position: absolute;
+            border: none;
+            background: none;
+        }
+
+        #pultelis .power-button {
+            top: 71px;
+            left: 626px;
+            width: 38px;
+            height: 26px;
+        }
+
+        #pultelis .channel-up {
+            top: 473px;
+            left: 628px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #pultelis .channel-down {
+            top: 519px;
+            left: 628px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #pultelis .sound-up {
+            top: 472px;
+            left: 504px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #pultelis .sound-down {
+            top: 521px;
+            left: 504px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #tv {
+            width: 360px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #output {
+            position: absolute;
+            width: 217px;
+            height: 60px;
+            top: 82px;
+            left: 38px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tv">
+        <div id="output"></div>
+        <img src="tv.png" alt="" />
+    </div>
+    <div id="pultelis">
+        <button class="button power-button"></button>
+        <button class="button channel-up"></button>
+        <button class="button channel-down"></button>
+        <button class="button sound-up"></button>
+        <button class="button sound-down"></button>
+        <img src="pultelis.webp" alt="" />
+    </div>
+    <script>
+        // Aprašykite klasę “Televizorius” su nurodytomis savybėmis: Gamintojas, kanalas ir garsas. 
+        // Gamintojo pavadinimą priskirkite konstruktoriuje kaip gautą parametrą. Vos tik įjungus televizorių turėtų būti 
+        // parinktas pirmas kanalas, o garso lygis 50. Sukurkite metodus kurie padidintų ir sumažintų televizoriaus garsą, 
+        // tačiau šis niekuomet negali būti žemiau nei 0 ir aukščiau nei 100. 
+        // Sukurkite metodą kuris keistų kanalą, tačiau atkreipkite dėmesį, kad gal televizorius jų turi tik 50, 
+        // tad jei pultelyje įvesite didesnį skaičių, kanalas turi būti pakeičiamas į pirmajį.
+        // Sukurkite metodą, kuris atstatytų televizorių atgal į gamyklinius parametrus.
+        // Sukurkite metodą, kuris grąžintų atgal eilutę “Televizorius ‘Sony’ šiuo metu rodo 8 kanalą. Garso lygis 76.”
+
+        class Televizorius {
+            constructor(gamintojas, kanalas = 1, garsas = 50) {
+                this.gamintojas = gamintojas;
+                this.kanalas = kanalas;
+                this.garsas = garsas;
+                this.statusas = false;
+            }
+
+            setStatusas() {
+                this.statusas = this.statusas ? false : true;
+            }
+
+            setGarsas(lygis) {
+                if(lygis < 0 || lygis > 100) return;
+                
+                this.garsas = lygis;
+
+                return this;
+            }
+
+            setKanalas(numeris) {
+                this.kanalas = (numeris > 50 || numeris < 1) ? 1 : numeris;
+
+                return this;
+            }
+
+            setAtstatymas() { 
+                this.kanalas = 1;
+                this.garsas = 50;
+
+                return this;
+            }
+
+            dabartiniaiNustatymai() {
+                if(!this.statusas) return '';
+
+                return `Televizorius ‘${this.gamintojas}’ šiuo metu rodo ${this.kanalas} kanalą. Garso lygis ${this.garsas}.`;
+            }
+        }
+
+        //Televizoriaus testavimo pradžia
+
+        // const tv = new Televizorius('Sony');
+        // const tv1 = new Televizorius('LG');
+        // const tv2 = new Televizorius('Apple');
+
+        // console.log('Įjungiam televizorių:', tv);
+
+        // tv.setGarsas(78);
+
+        // console.log('Keičiam garsą:', tv);
+
+        // tv.setGarsas(0);
+
+        // console.log('Išjungiam garsą:', tv);
+
+        // tv.setKanalas(5);
+
+        // console.log('Keičiam kanalą:', tv);
+
+        // tv.setKanalas(51);
+
+        // console.log('Keičiam kanalą:', tv);
+
+        // tv.setAtstatymas();
+
+        // console.log('Gamykliniai paramentrai:', tv);
+
+        // tv.setKanalas(6);
+
+        // tv.setGarsas(88);
+
+        // console.log(tv.dabartiniaiNustatymai());
+
+        // console.log(tv.setKanalas(8).setGarsas(19).setAtstatymas().dabartiniaiNustatymai());
+        
+        //Televizoriaus testavimo pabaiga
+
+        const tvOutput = document.querySelector('#output');
+        const powerButton = document.querySelector('.power-button');
+        const channelUp = document.querySelector('.channel-up');
+        const channelDown = document.querySelector('.channel-down');
+        const volumeUp = document.querySelector('.sound-up');
+        const volumeDown = document.querySelector('.sound-down');
+
+        const tv = new Televizorius('LG');
+
+        powerButton.addEventListener('click', () => {
+            tv.setStatusas();
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        channelUp.addEventListener('click', () => {
+            tv.setKanalas(tv.kanalas + 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        channelDown.addEventListener('click', () => {
+            tv.setKanalas(tv.kanalas - 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        volumeUp.addEventListener('click', () => {
+            tv.setGarsas(tv.garsas + 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        volumeDown.addEventListener('click', () => {
+            tv.setGarsas(tv.garsas - 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+    </script>
+</body>
+</html>
