@@ -49,7 +49,12 @@ const App = () => {
       <div className="container">
         <h1 className="mb-3 mt-3">Filmų duomenų bazė</h1>
 
-        <input type="text" className="form-control" onChange={(e) => setSearch(e.target.value)} />
+        <input 
+          type="text" 
+          className="form-control mb-4" 
+          onChange={(e) => setSearch(e.target.value)} 
+          placeholder="Įveskite filmo pavadinimą"
+        />
 
         {movies.length > 0 &&
           <>
