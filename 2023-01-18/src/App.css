@@ -1,0 +1,52 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css);
+
+.container {
+  max-width: 800px;
+}
+
+.movie {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie h3 {
+  margin: 1rem 0;
+  font-size: 18px;
+}
+
+.movie .info {
+  font-size: 14px;
+  color: grey;
+}
+
+.movie .info span:first-child {
+  text-align: left;
+}
+
+.movie .info span:last-child {
+  text-align: right;
+}
+
+.page-item span {
+  color: black;
+  display: block;
+  width: 40px;
+  text-align: center;
+  line-height: 34px;
+}
+
+.loading {
+  background: rgb(255,255,255, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
