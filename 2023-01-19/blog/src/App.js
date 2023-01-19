@@ -11,7 +11,7 @@ const App = () => {
 
     return (
         <>
-            <h1>Mano blog'as</h1>
+            <h1 className="text-center my-3">Mano blog'as</h1>
             <div className="container">
                 <div className="row">
                     {posts.map(post => 
