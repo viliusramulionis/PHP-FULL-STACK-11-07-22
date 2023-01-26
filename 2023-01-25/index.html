@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        fetch('data.php')
+        .then(resp => resp.text())
+        .then(resp => console.log(resp)); 
+</script>
 </body>
 </html>
