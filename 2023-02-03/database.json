@@ -1,0 +1,16 @@
+[
+    {
+       "id":"111111",
+       "name":"Haroldas",
+       "last_name":"K\u016blokas",
+       "iban":"LT111111111111111111",
+       "password":"abcd"
+    },
+    {
+       "id":"112589",
+       "name":"awdadawdawd",
+       "last_name":"awdawddawdawdawd",
+       "iban":"LT815616515616516",
+       "password":"1234"
+    }
+ ]
