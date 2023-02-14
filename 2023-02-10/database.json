@@ -1,0 +1,256 @@
+{
+    "users": {
+        "destroyer3000": {
+            "email": "vilius@bit.lt",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+            "first_name": "John",
+            "last_name": "Smith",
+            "id": "destroyer3000",
+            "created_at": "2023-02-09 10:28:19"
+        },
+        "johnnybones": {
+            "email": "naujas@gmail.com",
+            "password": "81dc9bdb52d04dc20036dbd8313ed055",
+            "first_name": "John",
+            "last_name": "Smith",
+            "id": "johnnybones",
+            "created_at": "2023-02-10 08:54:27"
+        },
+        "bunny123": {
+            "email": "bonny@yahoo.com",
+            "password": "81dc9bdb52d04dc20036dbd8313ed055",
+            "first_name": "Bonny",
+            "last_name": "Tyler",
+            "id": "bunny123",
+            "created_at": "2023-02-10 09:01:24"
+        }
+    },
+    "tweets": [
+        {
+            "message": "Nauja zinute",
+            "created_at": "2023-02-10 09:23:24",
+            "author": "johnnybones"
+        },
+        {
+            "message": "Dar viena zinute",
+            "created_at": "2023-02-10 09:23:40",
+            "author": "johnnybones"
+        },
+        {
+            "message": "Sveiki visi\r\n",
+            "created_at": "2023-02-10 09:28:47",
+            "author": "johnnybones"
+        },
+        {
+            "message": "Hello",
+            "created_at": "2023-02-10 09:29:44",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Zinute",
+            "created_at": "2023-02-10 09:34:15",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Zinute",
+            "created_at": "2023-02-10 09:34:41",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas postas",
+            "created_at": "2023-02-10 09:35:21",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas postas",
+            "created_at": "2023-02-10 09:37:54",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas postas",
+            "created_at": "2023-02-10 09:38:32",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas postas",
+            "created_at": "2023-02-10 09:39:06",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas postas",
+            "created_at": "2023-02-10 09:41:53",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas postas",
+            "created_at": "2023-02-10 09:42:08",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas tweetas",
+            "created_at": "2023-02-10 09:43:11",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas tweetas",
+            "created_at": "2023-02-10 09:45:33",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Naujas tweetas",
+            "created_at": "2023-02-10 09:49:54",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "wadawdawdawdawdawd",
+            "created_at": "2023-02-10 09:51:59",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "wadawdawdawdawdawd",
+            "created_at": "2023-02-10 10:01:50",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:02:36",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Teaswadawd",
+            "created_at": "2023-02-10 10:02:53",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:03:08",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdwdawd",
+            "created_at": "2023-02-10 10:03:31",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:11:30",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:11:42",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:12:09",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:12:15",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:12:26",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:12:33",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:13:10",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:13:15",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:13:19",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:13:35",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:13:37",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:13:45",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:14:01",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "aawdawdawdawdawd",
+            "created_at": "2023-02-10 10:14:11",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdawd",
+            "created_at": "2023-02-10 10:14:41",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awawdawdawdawd",
+            "created_at": "2023-02-10 10:15:01",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awawdawdawdawd",
+            "created_at": "2023-02-10 10:15:16",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Testas",
+            "created_at": "2023-02-10 10:15:20",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Testas",
+            "created_at": "2023-02-10 10:15:23",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Testas",
+            "created_at": "2023-02-10 10:15:25",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdaw",
+            "created_at": "2023-02-10 10:18:18",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "Failas su zinute",
+            "created_at": "2023-02-10 10:18:29",
+            "author": "destroyer3000",
+            "image": "1676020709.jpg"
+        },
+        {
+            "message": "wadawdawd\r\nawdawdawd\r\nawdawdawdawd",
+            "created_at": "2023-02-10 10:42:43",
+            "author": "destroyer3000"
+        },
+        {
+            "message": "awdawdawdaw<br \/>\r\nawdawdawd<br \/>\r\nawdawdawdawd",
+            "created_at": "2023-02-10 10:47:15",
+            "author": "destroyer3000"
+        }
+    ]
+}
