@@ -14,10 +14,10 @@
     }
 
     require './includes/db.php';
-    
+
     print_r(select('users', 'first_name', [
-        'email' => 'vilius@bit.lt', 
-        'password' => '81dc9bdb52d04dc20036dbd8313ed055'
+        'email' => 'test@test.lt', 
+        'password' => 'test'
     ]));
 
     
