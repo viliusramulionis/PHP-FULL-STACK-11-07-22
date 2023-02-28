@@ -38,5 +38,3 @@ $db = new Database();
 echo '<pre>';
 
 $db->getUsers()->changeUserPerm();
-
-print_r($db->users);
