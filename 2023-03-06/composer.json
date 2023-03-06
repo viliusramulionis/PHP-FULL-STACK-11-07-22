@@ -1,0 +1,20 @@
+{
+    "name": "vilius/pirmoji-composer-aplikacija",
+    "description": "Paprasta composer aplikacija",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Vilius\\PirmojiAplikacija\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "viliusramulionis",
+            "email": "35171606+viliusramulionis@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "league/climate": "dev-master"
+    }
+}
