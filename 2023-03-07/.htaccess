@@ -1,0 +1,9 @@
+# Apache (.htaccess or httpd.conf)
+RewriteEngine On
+RewriteBase /PHP-FULL-STACK-11-07-22/2023-03-07/
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} ^(.*)$
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

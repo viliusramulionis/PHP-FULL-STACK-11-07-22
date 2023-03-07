@@ -1,0 +1,20 @@
+{
+    "name": "vilius/youtube-projektas",
+    "description": "Simple youtube clone app",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "controllers/",
+            "Models\\": "models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vilius Ramulionis",
+            "email": "vilius.ramulionis@gmail.com"
+        }
+    ],
+    "require": {
+        "klein/klein": "^2.1"
+    }
+}
