@@ -1,8 +1,7 @@
 # Apache (.htaccess or httpd.conf)
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    #RewriteBase /PHP-FULL-STACK-11-07-22/2023-03-07/
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /PHP-FULL-STACK-11-07-22/2023-03-07/index.php [L]
+    RewriteRule . /PHP-FULL-STACK-11-07-22/2023-03-08/index.php [L]
 </IfModule>

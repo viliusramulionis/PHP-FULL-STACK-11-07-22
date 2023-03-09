@@ -3,7 +3,7 @@
 //Įdedame composer autoloaderį
 require_once 'vendor/autoload.php';
 
-define('PREFIX', '/PHP-FULL-STACK-11-07-22/2023-03-07');
+define('PREFIX', '/PHP-FULL-STACK-11-07-22/2023-03-08');
 
 /* 
     CRUD:
@@ -20,18 +20,17 @@ define('PREFIX', '/PHP-FULL-STACK-11-07-22/2023-03-07');
 
 //Routerio kūrimas
 
-echo '<pre>';
-print_r($_SERVER);
+$klein = new \Klein\Klein();
 
-// $klein = new \Klein\Klein();
+$klein->respond('GET', PREFIX . '/', function () {
+    Controllers\Homepage::index();
+});
 
-// //$klein->respond('GET', '*', Controllers\Homepage::index());
+$klein->respond('GET', PREFIX . '/category/[:id]', function ($request) {
+    return Controllers\Homepage::byCategory($request);
+});
 
-// $klein->respond('GET', PREFIX . '/category/[:id]', function ($request) {
-//     return Controllers\Homepage::byCategory($request);
-// });
-
-// $klein->dispatch();
+$klein->dispatch();
 
 // echo 'awd0';
 
