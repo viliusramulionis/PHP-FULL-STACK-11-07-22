@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use GuzzleHttp\Promise\Create;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,13 @@ use App\Http\Controllers\ProductsController;
 //     return $request->user();
 // });
 
-Route::get('/', [ProductsController::class, 'index']);
+//CRUD:
+//CREATE - POST
+//READ   - GET
+//UPDATE - PUT
+//DELETE - DELETE
+
+Route::group(['prefix'=> 'products'], function() {
+    Route::get('/', [ProductsController::class, 'index']);
+    Route::delete('/{id}', [ProductsController::class, 'delete'])->where('id', '[0-9]+');
+});

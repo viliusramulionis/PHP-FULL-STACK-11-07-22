@@ -16,14 +16,15 @@ class ProductsFactory extends Factory
      */
     public function definition(): array
     {
-        $photo_path = fake()->image(storage_path('/app/public'), 1024, 1024, 'products', true, true, 'electronics', true, 'jpg');
-        $photo_path = pathinfo($photo_path);
-        $photo_path = '/photos/' . $photo_path['basename'];
+        // $photo_path = fake()->image(storage_path('/app/public'), 1024, 1024, 'products', true, true, 'electronics', true, 'jpg');
+        // $photo_path = pathinfo($photo_path);
+        // $photo_path = '/photos/' . $photo_path['basename'];
 
         return [
             'name' => fake()->sentence(),
             'sku' => fake()->ean13(),
-            'photo' => $photo_path,
+            // 'photo' => $photo_path,
+            'photo' => 'https://picsum.photos/768/768/?q='.rand(0, 5000),
             'warehouse_qty' => rand(0, 30),
             'price' => rand(0, 5000) . '.' . rand(10, 99)
         ];
