@@ -28,5 +28,6 @@ use GuzzleHttp\Promise\Create;
 
 Route::group(['prefix'=> 'products'], function() {
     Route::get('/', [ProductsController::class, 'index']);
+    Route::post('/', [ProductsController::class, 'create']);
     Route::delete('/{id}', [ProductsController::class, 'delete'])->where('id', '[0-9]+');
 });
