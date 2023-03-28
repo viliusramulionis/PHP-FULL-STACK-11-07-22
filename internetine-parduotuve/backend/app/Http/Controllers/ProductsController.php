@@ -13,6 +13,22 @@ class ProductsController extends Controller
         return $data;
     }
 
+    public function singleProduct($id) {
+        try {
+            return Products::find($id);
+        } catch(\Exception $e) {
+            return response('Nepavyko gauti produkto duomenų', 500);
+        }
+    }
+
+    public function search($keyword) {
+        try {
+            return Products::where('name', 'LIKE', '%'.$keyword.'%')->get();
+        } catch(\Exception $e) {
+            return response('Nepavyko gauti produktų', 500);
+        }
+    }
+
     public function create(Request $request) {
         try {
             $product = new Products;
@@ -28,6 +44,24 @@ class ProductsController extends Controller
             return 'Produktas sėkmingai sukurtas';
         } catch(\Exception $e) {
             return response('Nepavyko išssaugoti produkto', 500);
+        }
+    }
+
+    public function edit(Request $request, $id) {
+        try {
+            $product = Products::find($id);
+
+            $product->name = $request->name;
+            $product->sku = $request->sku;
+            $product->photo = $request->photo;
+            $product->warehouse_qty = $request->warehouse_qty;
+            $product->price = $request->price;
+    
+            $product->save();
+            return 'Prekė sėkmingai atnaujinta';
+            
+        } catch(\Exception $e) {
+            return response('Atnaujinant įrašą įvyko klaida', 500);
         }
     }
 

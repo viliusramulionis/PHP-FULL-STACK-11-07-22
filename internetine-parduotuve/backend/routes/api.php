@@ -28,6 +28,9 @@ use GuzzleHttp\Promise\Create;
 
 Route::group(['prefix'=> 'products'], function() {
     Route::get('/', [ProductsController::class, 'index']);
+    Route::get('/s/{keyword}', [ProductsController::class, 'search']);
+    Route::get('/{id}', [ProductsController::class, 'singleProduct'])->where('id', '[0-9]+');
     Route::post('/', [ProductsController::class, 'create']);
+    Route::put('/{id}', [ProductsController::class, 'edit'])->where('id', '[0-9]+');
     Route::delete('/{id}', [ProductsController::class, 'delete'])->where('id', '[0-9]+');
 });

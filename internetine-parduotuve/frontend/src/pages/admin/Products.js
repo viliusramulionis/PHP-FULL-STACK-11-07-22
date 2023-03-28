@@ -69,7 +69,16 @@ function Products() {
                             <td>{product.price}</td>
                             <td>{product.status ? 'Įjungtas' : 'Išjungtas'}</td>
                             <td>{(new Date(product.created_at)).toLocaleString('lt-LT')}</td>
-                            <td><button className="btn btn-danger" onClick={() => handleDelete(product.id)}>Ištrinti</button></td>
+                            <td>
+                                <Link 
+                                    to={'/admin/edit-product/' + product.id} 
+                                    className="btn btn-primary"
+                                >Redaguoti</Link>
+                                <button 
+                                    className="btn btn-danger" 
+                                    onClick={() => handleDelete(product.id)}
+                                >Ištrinti</button>
+                            </td>
                         </tr>
                     )}
                 </tbody>
