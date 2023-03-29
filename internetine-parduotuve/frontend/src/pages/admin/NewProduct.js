@@ -1,12 +1,10 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Message from '../../components/message/Message';
-import Loading from '../../components/loading/Loading';
+import MainContext from '../../context/MainContext';
 
 function NewProduct() {
-    const [message, setMessage] = useState();
-    const [loading, setLoading] = useState(false);
+    const { setLoading, setMessage } = useContext(MainContext);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -36,9 +34,7 @@ function NewProduct() {
 
     return (
         <>
-            <Loading show={loading} />
             <h1>Naujas Produktas</h1>
-            <Message message={message} />
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label>Pavadinimas</label>

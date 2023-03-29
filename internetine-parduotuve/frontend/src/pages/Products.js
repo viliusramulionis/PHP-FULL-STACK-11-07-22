@@ -1,11 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import axios from 'axios';
-import Header from '../components/header/Header';
+import MainContext from '../context/MainContext';
 
 function Products() {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+  // const [refresh, setRefresh] = useState(false);
+  const { data, setData, refresh, setLoading, setMessage } = useContext(MainContext);
 
   useEffect(() => {
+    setMessage(false);
+    setLoading(true);
     //Duomenų paėmimas naudojant fetch funkciją
     // fetch('http://localhost:8000/api/')
     // .then(resp => resp.json())
@@ -15,12 +19,12 @@ function Products() {
 
     //Duomenų paėmimas naudojant axios modulį
     axios.get('http://localhost:8000/api/products/')
-    .then(resp => setData(resp.data));
-  }, []);
+    .then(resp => setData(resp.data))
+    .finally(() => setLoading(false));
+  }, [refresh]);
 
   return (
     <>
-        <Header setData={setData} />
         <h1>Naujausi produktai</h1>
         <div className="row">
           {data.map(product => 

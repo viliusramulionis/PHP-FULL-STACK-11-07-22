@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import Message from '../../components/message/Message';
-import Loading from '../../components/loading/Loading';
+import MainContext from '../../context/MainContext';
 
 function EditProduct() {
-    const [message, setMessage] = useState();
-    const [loading, setLoading] = useState(false);
+    const { setLoading, setMessage } = useContext(MainContext);
     const [data, setData] = useState({
         name: '',
         sku: '',
@@ -18,8 +16,11 @@ function EditProduct() {
     const { id } = useParams();
 
     useEffect(() => {
+        setLoading(true);
+
         axios.get('http://localhost:8000/api/products/' + id)
-        .then(resp => setData(resp.data));
+        .then(resp => setData(resp.data))
+        .finally(() => setLoading(false));
     }, []);
 
     const handleSubmit = (e) => {
@@ -36,6 +37,7 @@ function EditProduct() {
         // .then(resp => console.log(resp));
 
         setLoading(true);
+
         axios.put('http://localhost:8000/api/products/' + id, data)
         .then(resp => {
             setMessage({m: resp.data, s: 'success'});
@@ -53,9 +55,7 @@ function EditProduct() {
 
     return (
         <>
-            <Loading show={loading} />
             <h1>Redaguoti produktą</h1>
-            <Message message={message} />
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label>Pavadinimas</label>
