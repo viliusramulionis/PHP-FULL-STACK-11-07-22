@@ -1,11 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MainContext from '../../context/MainContext';
 
 function NewProduct() {
+    const [data, setData] = useState([]);
     const { setLoading, setMessage } = useContext(MainContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/categories')
+        .then(resp => setData(resp.data));
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -55,6 +61,16 @@ function NewProduct() {
                 <div className="mb-3">
                     <label>Kaina</label>
                     <input type="number" name="price" step="0.01" className="form-control" required />
+                </div>
+                <div className="mb-3">
+                    {data.map(item => 
+                        <div key={item.id}>
+                            <label>
+                                <input type="checkbox" name="categories[]" className="form-check-input me-2" value={item.id} />
+                                {item.name}
+                            </label>
+                        </div>    
+                    )}
                 </div>
                 <button className="btn btn-primary">Išsaugoti</button>
             </form>

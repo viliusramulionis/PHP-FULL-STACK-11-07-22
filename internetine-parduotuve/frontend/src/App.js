@@ -13,8 +13,11 @@ import MainContext from './context/MainContext';
 //Puslapiai
 import Products from './pages/Products';
 import AdminProducts from './pages/admin/Products';
-import NewProduct from './pages/admin/NewProduct';
-import EditProduct from './pages/admin/EditProduct';
+import NewProduct from './pages/admin/ProductsNew';
+import EditProduct from './pages/admin/ProductsEdit';
+import Categories from './pages/admin/Categories';
+import NewCategory from './pages/admin/CategoriesNew';
+import EditCategory from './pages/admin/CategoriesEdit';
 
 function App() {
   const [data, setData] = useState([]);
@@ -40,9 +43,14 @@ function App() {
           <MainLayout>
             <Routes>
               <Route path="/" element={<Products />} />
-              <Route path="/admin" element={<AdminProducts />} />
-              <Route path="/admin/new-product" element={<NewProduct />} />
-              <Route path="/admin/edit-product/:id" element={<EditProduct />} />
+              <Route path="/admin">
+                <Route index element={<AdminProducts />} />
+                <Route path="new-product" element={<NewProduct />} />
+                <Route path="edit-product/:id" element={<EditProduct />} />
+                <Route path="categories" element={<Categories />} />
+                <Route path="new-category" element={<NewCategory />} />
+                <Route path="edit-category/:id" element={<EditCategory />} />
+              </Route>
             </Routes>
           </MainLayout>
         </MainContext.Provider>

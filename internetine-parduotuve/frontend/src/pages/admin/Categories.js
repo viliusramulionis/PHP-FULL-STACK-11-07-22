@@ -4,20 +4,13 @@ import axios from 'axios';
 import MainContext from '../../context/MainContext';
 import AdminTableButtons from '../../components/adminTableButtons/AdminTableButtons';
 
-function Products() {
+function Categories() {
     const { data, setLoading, setData, refresh, setMessage, setRefresh } = useContext(MainContext);
 
     useEffect(() => {
         setLoading(true);
-        //Duomenų paėmimas naudojant fetch funkciją
-        // fetch('http://localhost:8000/api/')
-        // .then(resp => resp.json())
-        // .then(resp => {
-        //   setData(resp);
-        // });
 
-        //Duomenų paėmimas naudojant axios modulį
-        axios.get('http://localhost:8000/api/products')
+        axios.get('http://localhost:8000/api/categories')
             .then(resp => {
                 setData(resp.data);
             })
@@ -27,7 +20,7 @@ function Products() {
     const handleDelete = (id) => {
         setLoading(true);
 
-        axios.delete('http://localhost:8000/api/products/' + id)
+        axios.delete('http://localhost:8000/api/categories/' + id)
             .then(resp => {
                 setMessage({ m: resp.data, s: 'success' });
                 setRefresh(!refresh);
@@ -38,20 +31,15 @@ function Products() {
     return (
         <>
             <div className="d-flex justify-content-between align-items-center">
-                <h1>Produktų sąrašas</h1>
-                <Link to="/admin/new-product" className="btn btn-primary">Naujas produktas</Link>
+                <h1>Kategorijų sąrašas</h1>
+                <Link to="/admin/new-category" className="btn btn-primary">Nauja kategorija</Link>
             </div>
             <table className="table">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Pavadinimas</th>
-                        <th>SKU</th>
-                        <th>Likutis</th>
-                        <th>Kaina</th>
-                        <th>Statusas</th>
-                        <th>Kategorijos</th>
-                        <th>Data</th>
+                        <th>Sukūrimo data</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -60,16 +48,11 @@ function Products() {
                         <tr key={item.id}>
                             <td>{item.id}</td>
                             <td>{item.name}</td>
-                            <td>{item.sku}</td>
-                            <td>{item.warehouse_qty}</td>
-                            <td>{item.price}</td>
-                            <td>{item.status ? 'Įjungtas' : 'Išjungtas'}</td>
-                            <td>{item.categories.map(cat => cat.name).join(', ')}</td>
                             <td>{(new Date(item.created_at)).toLocaleString('lt-LT')}</td>
                             <td>
                                 <AdminTableButtons 
                                     id={item.id} 
-                                    link="product" 
+                                    link="category" 
                                     deleteFn={handleDelete} 
                                 />
                             </td>
@@ -81,4 +64,4 @@ function Products() {
     );
 }
 
-export default Products;
+export default Categories;

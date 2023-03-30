@@ -8,14 +8,14 @@ use App\Models\Products;
 class ProductsController extends Controller
 {
     public function index() {
-        $data = Products::all();
+        $data = Products::with('categories')->get();
 
         return $data;
     }
 
     public function singleProduct($id) {
         try {
-            return Products::find($id);
+            return Products::with('categories')->find($id);
         } catch(\Exception $e) {
             return response('Nepavyko gauti produkto duomenų', 500);
         }
@@ -33,33 +33,37 @@ class ProductsController extends Controller
 
     public function create(Request $request) {
         try {
-            $product = new Products;
+            $data = new Products;
 
-            $product->name = $request->name;
-            $product->sku = $request->sku;
-            $product->photo = $request->photo;
-            $product->warehouse_qty = $request->warehouse_qty;
-            $product->price = $request->price;
+            $data->name = $request->name;
+            $data->sku = $request->sku;
+            $data->photo = $request->photo;
+            $data->warehouse_qty = $request->warehouse_qty;
+            $data->price = $request->price;
+            $data->save();
 
-            $product->save();
-            
+            $data->categories()->attach($request->categories);  
+
             return 'Produktas sėkmingai sukurtas';
         } catch(\Exception $e) {
-            return response('Nepavyko išssaugoti produkto', 500);
+            return response($e, 500);
         }
     }
 
     public function edit(Request $request, $id) {
         try {
-            $product = Products::find($id);
+            $data = Products::find($id);
 
-            $product->name = $request->name;
-            $product->sku = $request->sku;
-            $product->photo = $request->photo;
-            $product->warehouse_qty = $request->warehouse_qty;
-            $product->price = $request->price;
+            $data->name = $request->name;
+            $data->sku = $request->sku;
+            $data->photo = $request->photo;
+            $data->warehouse_qty = $request->warehouse_qty;
+            $data->price = $request->price;
     
-            $product->save();
+            $data->save();
+
+            $data->categories()->sync($request->categories);
+
             return 'Prekė sėkmingai atnaujinta';
             
         } catch(\Exception $e) {
@@ -69,7 +73,10 @@ class ProductsController extends Controller
 
     public function delete($id) {
         try {
-            Products::find($id)->delete();
+            $data = Products::find($id);
+            $data->categories()->detach();
+            $data->delete();
+            
             return 'Produktas sėkmingai ištrintas';
         } catch(\Exception $e) {
             return response('Atsiprašome įvyko klaida', 500);
