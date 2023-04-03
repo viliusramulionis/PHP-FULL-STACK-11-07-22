@@ -10,8 +10,10 @@ function EditProduct() {
         sku: '',
         photo: '',
         warehouse_qty: '',
-        price: ''
+        price: '',
+        categories: []
     });
+    const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -21,6 +23,9 @@ function EditProduct() {
         axios.get('http://localhost:8000/api/products/' + id)
         .then(resp => setData(resp.data))
         .finally(() => setLoading(false));
+
+        axios.get('http://localhost:8000/api/categories')
+        .then(resp => setCategories(resp.data));
     }, []);
 
     const handleSubmit = (e) => {
@@ -37,7 +42,7 @@ function EditProduct() {
         // .then(resp => console.log(resp));
 
         setLoading(true);
-
+        
         axios.put('http://localhost:8000/api/products/' + id, data)
         .then(resp => {
             setMessage({m: resp.data, s: 'success'});
@@ -50,7 +55,20 @@ function EditProduct() {
     }
 
     const handleField = (e) => {
+        console.log(data);
+        if(e.target.name === 'categories') {
+            if(e.target.checked) {
+                data.categories.push(e.target.value);
+            } else {
+                const index = data.categories.indexOf(e.target.value);
+                data.categories.splice(index, 1);
+            }
+            
+            return setData({...data});
+        }
+        
         setData({...data, [e.target.name] : e.target.value});
+        
     }
 
     return (
@@ -112,6 +130,23 @@ function EditProduct() {
                         value={data.price} 
                         onChange={handleField}
                     />
+                </div>
+                <div className="mb-3">
+                    {categories.map(item => 
+                        <div key={item.id}>
+                            <label>
+                                <input 
+                                    type="checkbox" 
+                                    name="categories" 
+                                    className="form-check-input me-2" 
+                                    value={item.id} 
+                                    onChange={handleField}
+                                    checked={data.categories.find(el => el.id === item.id)}
+                                />
+                                {item.name}
+                            </label>
+                        </div>    
+                    )}
                 </div>
                 <button className="btn btn-primary">Išsaugoti</button>
             </form>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,12 @@ Route::group(['prefix'=> 'categories'], function() {
     Route::post('/', [CategoriesController::class, 'create']);
     Route::put('/{id}', [CategoriesController::class, 'edit'])->where('id', '[0-9]+');
     Route::delete('/{id}', [CategoriesController::class, 'delete'])->where('id', '[0-9]+');
+});
+
+Route::group(['prefix'=> 'orders'], function() {
+    Route::get('/', [OrderController::class, 'index']);
+    Route::get('/{id}', [OrderController::class, 'singleCategory'])->where('id', '[0-9]+');
+    Route::post('/', [OrderController::class, 'create']);
+    Route::put('/{id}', [OrderController::class, 'edit'])->where('id', '[0-9]+');
+    Route::delete('/{id}', [OrderController::class, 'delete'])->where('id', '[0-9]+');
 });
