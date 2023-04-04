@@ -1,0 +1,13 @@
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: -50px;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}

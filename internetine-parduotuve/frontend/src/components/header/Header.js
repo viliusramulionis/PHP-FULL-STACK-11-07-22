@@ -1,11 +1,19 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MainContext from '../../context/MainContext';
+import './Header.css';
 
 function Header() {
     const [search, setSearch] = useState('');
+    const [show, setShow] = useState(false);
+    const [categories, setCategories] = useState([]);
     const {setData, setRefresh} = useContext(MainContext);
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/categories')
+        .then(resp => setCategories(resp.data));
+    }, []);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -25,8 +33,9 @@ function Header() {
                     </Link>
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><Link to="/admin" className="nav-link px-2 link-dar">Administratorius</Link></li>
-                        <li><Link to="/admin/categories" className="nav-link px-2 link-dar">Kategorijos</Link></li>
+                        {categories.map(el => 
+                            <li><Link to={'/category/' + el.id} className="nav-link px-2 link-dar">{el.name}</Link></li>
+                        )}
                     </ul>
 
                     <form 
@@ -45,9 +54,19 @@ function Header() {
                     </form>
 
                     <div className="dropdown text-end">
-                        <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div 
+                            className="d-block link-dark text-decoration-none dropdown-toggle"
+                            onClick={() => setShow(!show)}
+                        >
                             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" className="rounded-circle" />
-                        </a>
+                        </div>
+                        {show &&
+                            <ul class="dropdown-menu text-small show">
+                                <li><Link to="/admin" className="dropdown-item">Administratorius</Link></li>
+                                <li><Link to="/admin/categories" className="dropdown-item">Kategorijos</Link></li>
+                                <li><Link to="/admin/orders" className="dropdown-item">Užsakymai</Link></li>
+                            </ul>
+                        }
                     </div>
                 </div>
             </div>

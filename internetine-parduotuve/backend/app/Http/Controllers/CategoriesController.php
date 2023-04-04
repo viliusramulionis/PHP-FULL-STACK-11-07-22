@@ -15,6 +15,14 @@ class CategoriesController extends Controller
         }
     }
 
+    public function categoryProducts($id) {
+        try {
+            return Categories::with('products')->find($id);
+        } catch(\Exception $e) {
+            return response('Nepavyko gauti kategorijos duomenų', 500);
+        }
+    }
+
     public function singleCategory($id) {
         try {
             return Categories::find($id);

@@ -29,6 +29,7 @@ use App\Http\Controllers\OrderController;
 Route::group(['prefix'=> 'products'], function() {
     Route::get('/', [ProductsController::class, 'index']);
     Route::get('/s/{keyword}', [ProductsController::class, 'search']);
+    Route::get('/{field}/{order}', [ProductsController::class, 'order']);
     Route::get('/{id}', [ProductsController::class, 'singleProduct'])->where('id', '[0-9]+');
     Route::post('/', [ProductsController::class, 'create']);
     Route::put('/{id}', [ProductsController::class, 'edit'])->where('id', '[0-9]+');
@@ -38,6 +39,7 @@ Route::group(['prefix'=> 'products'], function() {
 Route::group(['prefix'=> 'categories'], function() {
     Route::get('/', [CategoriesController::class, 'index']);
     Route::get('/{id}', [CategoriesController::class, 'singleCategory'])->where('id', '[0-9]+');
+    Route::get('/products/{id}', [CategoriesController::class, 'categoryProducts'])->where('id', '[0-9]+');
     Route::post('/', [CategoriesController::class, 'create']);
     Route::put('/{id}', [CategoriesController::class, 'edit'])->where('id', '[0-9]+');
     Route::delete('/{id}', [CategoriesController::class, 'delete'])->where('id', '[0-9]+');
@@ -45,8 +47,6 @@ Route::group(['prefix'=> 'categories'], function() {
 
 Route::group(['prefix'=> 'orders'], function() {
     Route::get('/', [OrderController::class, 'index']);
-    Route::get('/{id}', [OrderController::class, 'singleCategory'])->where('id', '[0-9]+');
     Route::post('/', [OrderController::class, 'create']);
     Route::put('/{id}', [OrderController::class, 'edit'])->where('id', '[0-9]+');
-    Route::delete('/{id}', [OrderController::class, 'delete'])->where('id', '[0-9]+');
 });
