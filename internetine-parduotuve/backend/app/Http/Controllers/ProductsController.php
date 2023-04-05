@@ -54,7 +54,7 @@ class ProductsController extends Controller
 
             return 'Produktas sėkmingai sukurtas';
         } catch(\Exception $e) {
-            return response($e, 500);
+            return response('Įvyko serverio klaida', 500);
         }
     }
 

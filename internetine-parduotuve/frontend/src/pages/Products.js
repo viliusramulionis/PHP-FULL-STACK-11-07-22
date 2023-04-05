@@ -18,9 +18,11 @@ function Products() {
 
     setMessage(false);
     setLoading(true);
-    
+
     axios.get(url)
-    .then(resp => setData(resp.data))
+    .then(resp => {
+      setData(resp.data)
+    })
     .finally(() => setLoading(false));
   }, [refresh, sort, direction]);
 

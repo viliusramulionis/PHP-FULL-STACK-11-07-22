@@ -66,7 +66,7 @@ function Orders() {
                             </td>
                             <td>
                                 <button 
-                                    className="btn btn-primary"
+                                    className={'btn ' + (item.is_completed ? 'btn-success' : 'btn-warning')}
                                     onClick={() => handleChange(item.id, item.is_completed)}
                                 >
                                     {!item.is_completed ? 'Išsiųstas' : 'Ruošiamas'}
